@@ -4938,10 +4938,6 @@
 /area/almayer/lifeboat_pumps/north1)
 "amW" = (
 /obj/structure/largecrate/random/barrel/true_random,
-/obj/effect/decal/cleanable/cobweb{
-	dir = 8;
-	plane = -6
-	},
 /turf/open/floor/almayer/plate,
 /area/almayer/lifeboat_pumps/north1)
 "amX" = (
@@ -5038,10 +5034,6 @@
 	dir = 1;
 	layer = 3.1;
 	pixel_y = 5
-	},
-/obj/effect/decal/cleanable/cobweb{
-	dir = 8;
-	plane = -6
 	},
 /turf/open/floor/almayer/test_floor5,
 /area/almayer/living/synthcloset)
