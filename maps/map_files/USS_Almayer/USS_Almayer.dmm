@@ -4037,7 +4037,7 @@
 	pixel_y = 24;
 	req_one_access_txt = list(19,35)
 	},
-/turf/open/floor/engine,
+/turf/open/floor/almayer/plate,
 /area/almayer/engineering/lower/workshop/hangar)
 "akw" = (
 /turf/open/floor/almayer/dark_sterile,
@@ -4913,6 +4913,16 @@
 /obj/effect/decal/cleanable/blood/oil/streak,
 /turf/open/floor/almayer/plate,
 /area/almayer/lifeboat_pumps/north1)
+"amR" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "S"
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "W";
+	layer = 3.3
+	},
+/turf/open/floor/almayer/plate,
+/area/almayer/engineering/lower/workshop/hangar)
 "amS" = (
 /obj/structure/largecrate/random/case/double,
 /turf/open/floor/plating/plating_catwalk,
@@ -7338,12 +7348,60 @@
 /obj/structure/largecrate/random/barrel/true_random,
 /turf/open/floor/plating/plating_catwalk,
 /area/almayer/lifeboat_pumps/north1)
+"asC" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "S"
+	},
+/turf/open/floor/almayer/plate,
+/area/almayer/engineering/lower/workshop/hangar)
+"asD" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "S"
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "E";
+	pixel_x = 1
+	},
+/turf/open/floor/almayer/plate,
+/area/almayer/engineering/lower/workshop/hangar)
 "asE" = (
 /obj/structure/pipes/standard/simple/hidden/supply{
 	dir = 4
 	},
 /turf/open/floor/almayer/plate,
 /area/almayer/hallways/lower/repair_bay)
+"asF" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "N";
+	pixel_y = 1
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "W";
+	layer = 3.3
+	},
+/turf/open/floor/almayer/plate,
+/area/almayer/engineering/lower/workshop/hangar)
+"asG" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "N";
+	pixel_y = 1
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "E";
+	pixel_x = 1
+	},
+/turf/open/floor/almayer/plate,
+/area/almayer/engineering/lower/workshop/hangar)
+"asH" = (
+/obj/structure/disposalpipe/segment,
+/turf/closed/wall/almayer,
+/area/almayer/engineering/lower/workshop/hangar)
+"asI" = (
+/obj/structure/disposalpipe/up/almayer{
+	id = "almayerlink_OT_req"
+	},
+/turf/closed/wall/almayer,
+/area/almayer/engineering/lower/workshop/hangar)
 "asJ" = (
 /obj/structure/machinery/light{
 	dir = 8
@@ -7658,9 +7716,6 @@
 	},
 /turf/open/floor/almayer/plating/northeast,
 /area/almayer/engineering/upper_engineering)
-"auW" = (
-/turf/closed/wall/almayer/reinforced,
-/area/almayer/shipboard/port_point_defense)
 "auX" = (
 /obj/structure/pipes/standard/simple/hidden/supply{
 	dir = 4
@@ -37810,7 +37865,7 @@
 	pixel_y = 24;
 	req_one_access_txt = list(19,35)
 	},
-/turf/open/floor/engine,
+/turf/open/floor/almayer/plate,
 /area/almayer/engineering/lower/workshop/hangar)
 "kyr" = (
 /obj/structure/machinery/door/firedoor/border_only/almayer,
@@ -96286,8 +96341,8 @@ ary
 ouw
 nmY
 aId
-xHS
-tEd
+asF
+amR
 vjW
 nmY
 siT
@@ -96479,8 +96534,8 @@ gfW
 oJL
 jMa
 cVt
-lFp
-lFp
+asI
+asH
 hZe
 aoV
 aoQ
@@ -96896,7 +96951,7 @@ acd
 nmY
 amb
 kyh
-tEd
+asC
 aau
 nmY
 qpV
@@ -97911,7 +97966,7 @@ wDr
 wDr
 iZE
 akv
-tEd
+asC
 aau
 nmY
 siT
@@ -98519,8 +98574,8 @@ azy
 azy
 wDr
 sJI
-xHS
-tEd
+asG
+asD
 aku
 nmY
 uKH
@@ -98926,7 +98981,7 @@ azD
 wDr
 bSf
 bSf
-auW
+bSf
 bSf
 bSf
 ued
