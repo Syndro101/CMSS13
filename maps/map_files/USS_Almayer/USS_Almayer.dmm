@@ -207,10 +207,6 @@
 	},
 /turf/open/floor/almayer/test_floor4,
 /area/almayer/living/pilotbunks)
-"aaz" = (
-/obj/structure/machinery/light,
-/turf/open/floor/almayer/plate,
-/area/almayer/living/pilotbunks)
 "aaA" = (
 /obj/structure/surface/table/reinforced/almayer_B,
 /obj/item/storage/fancy/cigarettes/wypacket,
@@ -646,14 +642,6 @@
 "abE" = (
 /turf/closed/wall/almayer,
 /area/almayer/living/basketball)
-"abF" = (
-/obj/structure/surface/rack,
-/obj/effect/spawner/random/toolbox,
-/obj/structure/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/almayer/plate,
-/area/almayer/command/telecomms)
 "abG" = (
 /obj/structure/machinery/vending/coffee{
 	pixel_x = 3;
@@ -1793,6 +1781,12 @@
 	},
 /turf/open/floor/almayer/blue/east,
 /area/almayer/living/basketball)
+"aeJ" = (
+/obj/structure/machinery/door/airlock/almayer/maint{
+	dir = 1
+	},
+/turf/open/floor/almayer/test_floor4,
+/area/almayer/living/pilotbunks)
 "aeK" = (
 /turf/open/floor/almayer/plating/northeast,
 /area/almayer/shipboard/starboard_missiles)
@@ -2099,6 +2093,11 @@
 /obj/effect/decal/siding,
 /turf/open/floor/wood/ship,
 /area/almayer/living/bridgebunks)
+"afy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/machinery/light,
+/turf/open/floor/almayer/plate,
+/area/almayer/living/pilotbunks)
 "afz" = (
 /obj/structure/coatrack{
 	pixel_x = -5
@@ -3011,6 +3010,13 @@
 /obj/structure/pipes/standard/simple/hidden/supply,
 /turf/open/floor/almayer,
 /area/almayer/living/chapel)
+"ahS" = (
+/obj/structure/closet/toolcloset{
+	pixel_x = -7;
+	pixel_y = -1
+	},
+/turf/open/floor/almayer/orange/southwest,
+/area/almayer/command/telecomms)
 "ahT" = (
 /obj/structure/machinery/door/airlock/almayer/maint,
 /obj/structure/disposalpipe/segment{
@@ -3668,6 +3674,11 @@
 	},
 /turf/open/floor/almayer/plate,
 /area/almayer/living/captain_mess)
+"ajA" = (
+/obj/structure/machinery/light,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/almayer/orange,
+/area/almayer/command/telecomms)
 "ajB" = (
 /obj/structure/bed/chair/comfy,
 /turf/open/floor/almayer/bluefull,
@@ -3759,6 +3770,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/almayer/blue/north,
 /area/almayer/living/numbertwobunks)
+"ajM" = (
+/obj/structure/machinery/firealarm{
+	pixel_y = -24;
+	dir = 1
+	},
+/turf/open/floor/almayer/orange,
+/area/almayer/command/telecomms)
 "ajN" = (
 /obj/structure/bookcase{
 	can_block_movement = 0;
@@ -5612,6 +5630,9 @@
 	},
 /turf/open/floor/almayer/sterile_green,
 /area/almayer/medical/containment)
+"aoL" = (
+/turf/open/floor/almayer/orange/southeast,
+/area/almayer/command/telecomms)
 "aoM" = (
 /turf/open/floor/almayer/dark_sterile,
 /area/almayer/medical/medical_science)
@@ -5624,13 +5645,6 @@
 "aoO" = (
 /turf/open/floor/almayer/plate,
 /area/almayer/engineering/lower/workshop/hangar)
-"aoP" = (
-/obj/structure/machinery/camera/autoname/almayer{
-	dir = 1;
-	name = "ship-grade camera"
-	},
-/turf/open/floor/plating/plating_catwalk,
-/area/almayer/command/telecomms)
 "aoQ" = (
 /obj/structure/pipes/vents/pump{
 	dir = 1
@@ -6181,35 +6195,63 @@
 	},
 /turf/open/floor/almayer/blue/west,
 /area/almayer/living/offices/flight)
-"apW" = (
-/obj/structure/machinery/telecomms/server/presets/common,
-/turf/open/floor/almayer/tcomms,
-/area/almayer/command/telecomms)
-"apX" = (
-/obj/structure/machinery/telecomms/server/presets/medical,
-/turf/open/floor/almayer/tcomms,
-/area/almayer/command/telecomms)
 "apY" = (
-/obj/structure/machinery/telecomms/server/presets/engineering,
-/turf/open/floor/almayer/tcomms,
+/obj/structure/machinery/telecomms/server/presets/medical,
+/obj/structure/machinery/telecomms/processor/preset_three{
+	pixel_y = 16;
+	layer = 3.1
+	},
+/turf/open/floor/almayer/test_floor5{
+	allow_construction = 0
+	},
 /area/almayer/command/telecomms)
 "apZ" = (
-/obj/structure/machinery/telecomms/receiver/preset_left,
-/obj/structure/sign/safety/hazard{
-	pixel_y = 32
+/obj/effect/decal/warning_stripes{
+	icon_state = "W"
 	},
-/obj/structure/sign/safety/radio_rad{
-	pixel_x = 16;
-	pixel_y = 32
+/obj/effect/decal/warning_stripes{
+	icon_state = "NE-out";
+	pixel_x = 1;
+	pixel_y = 1
 	},
-/turf/open/floor/almayer/tcomms,
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
+	},
 /area/almayer/command/telecomms)
 "aqa" = (
-/obj/structure/machinery/telecomms/receiver/preset,
-/turf/open/floor/almayer/tcomms,
+/obj/structure/surface/table/reinforced/almayer_B,
+/obj/structure/machinery/prop/almayer/computer{
+	pixel_x = -4
+	},
+/obj/structure/machinery/computer/working_joe{
+	pixel_x = 13
+	},
+/turf/open/floor/plating/plating_catwalk,
 /area/almayer/command/telecomms)
 "aqb" = (
-/turf/open/floor/almayer/tcomms,
+/obj/structure/surface/table/reinforced/almayer_B,
+/obj/structure/machinery/door_control{
+	id = "tcomms_outer";
+	name = "Outer Telecommunications Controls";
+	pixel_x = 8;
+	req_one_access_txt = list(19,7)
+	},
+/obj/structure/machinery/door_control{
+	id = "tcomms_inner";
+	name = "Inner Telecommunications Controls";
+	pixel_x = 8;
+	pixel_y = 8;
+	req_access_txt = list(19)
+	},
+/obj/item/device/flashlight/lamp/on{
+	pixel_y = 12;
+	pixel_x = -4;
+	layer = 3.2
+	},
+/obj/item/reagent_container/food/drinks/coffeecup/uscm{
+	pixel_x = -3
+	},
+/turf/open/floor/plating/plating_catwalk,
 /area/almayer/command/telecomms)
 "aqc" = (
 /obj/effect/decal/cleanable/generic,
@@ -6568,10 +6610,8 @@
 /turf/closed/wall/almayer/reinforced,
 /area/almayer/command/airoom)
 "aqV" = (
-/obj/structure/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/almayer/tcomms,
+/obj/structure/foamed_metal/iron,
+/turf/open/floor/plating,
 /area/almayer/command/telecomms)
 "aqW" = (
 /obj/structure/sign/poster{
@@ -6650,52 +6690,6 @@
 	},
 /turf/open/floor/almayer/plate,
 /area/almayer/maint/hull/lower/l_f_s)
-"arg" = (
-/obj/structure/surface/table/almayer,
-/obj/item/paper_bin/uscm,
-/obj/structure/sign/safety/rewire{
-	pixel_x = 8;
-	pixel_y = 32
-	},
-/turf/open/floor/almayer/plate,
-/area/almayer/command/telecomms)
-"arh" = (
-/obj/structure/machinery/light{
-	dir = 1
-	},
-/obj/structure/machinery/power/apc/almayer/north{
-	cell_type = /obj/item/cell/hyper
-	},
-/turf/open/floor/almayer/plate,
-/area/almayer/command/telecomms)
-"ari" = (
-/obj/structure/surface/rack,
-/obj/item/device/radio/intercom{
-	freerange = 1;
-	name = "General Listening Channel";
-	pixel_y = 28
-	},
-/obj/item/storage/pouch/tools,
-/turf/open/floor/almayer/plate,
-/area/almayer/command/telecomms)
-"arj" = (
-/obj/structure/surface/table/almayer,
-/obj/item/clipboard,
-/obj/item/device/radio/headset,
-/turf/open/floor/almayer/plate,
-/area/almayer/command/telecomms)
-"ark" = (
-/obj/structure/surface/table/almayer,
-/obj/item/device/flashlight/lamp,
-/turf/open/floor/almayer/plate,
-/area/almayer/command/telecomms)
-"arl" = (
-/obj/structure/closet/toolcloset,
-/obj/structure/machinery/firealarm{
-	pixel_y = 28
-	},
-/turf/open/floor/almayer/cargo,
-/area/almayer/command/telecomms)
 "arm" = (
 /turf/open/floor/almayer/orange/northeast,
 /area/almayer/engineering/upper_engineering)
@@ -6706,6 +6700,12 @@
 	},
 /turf/open/floor/almayer/test_floor4,
 /area/almayer/living/bridgebunks)
+"aro" = (
+/obj/structure/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/almayer/orange/west,
+/area/almayer/command/telecomms)
 "arp" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -6734,6 +6734,38 @@
 	},
 /turf/open/floor/almayer/orange/north,
 /area/almayer/engineering/upper_engineering)
+"art" = (
+/turf/open/floor/almayer/orange/northwest,
+/area/almayer/command/telecomms)
+"aru" = (
+/turf/open/floor/almayer/orange/north,
+/area/almayer/command/telecomms)
+"arv" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
+/turf/open/floor/almayer/orange/north,
+/area/almayer/command/telecomms)
+"arw" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/pipes/standard/simple/hidden/supply/no_boom{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/almayer/orange/north,
+/area/almayer/command/telecomms)
+"arx" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/pipes/standard/simple/hidden/supply/no_boom{
+	dir = 4
+	},
+/turf/open/floor/almayer/orange/northeast,
+/area/almayer/command/telecomms)
 "ary" = (
 /turf/open/floor/almayer/orange/southwest,
 /area/almayer/engineering/lower/workshop/hangar)
@@ -6748,6 +6780,31 @@
 /obj/item/tool/crowbar,
 /turf/open/floor/almayer/plate,
 /area/almayer/engineering/upper_engineering)
+"arB" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/pipes/standard/simple/hidden/supply{
+	dir = 4
+	},
+/turf/open/floor/almayer/orange/west,
+/area/almayer/engineering/upper_engineering)
+"arC" = (
+/obj/structure/closet/secure_closet/engineering_welding{
+	pixel_x = -7
+	},
+/turf/open/floor/almayer/orange/northwest,
+/area/almayer/command/telecomms)
+"arD" = (
+/obj/structure/closet/secure_closet/engineering_electrical{
+	pixel_x = 8
+	},
+/turf/open/floor/almayer/orange/northeast,
+/area/almayer/command/telecomms)
+"arE" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/almayer/plate,
+/area/almayer/command/telecomms)
 "arF" = (
 /obj/structure/machinery/light{
 	dir = 1
@@ -6762,6 +6819,30 @@
 /obj/structure/largecrate/random/case/double,
 /turf/open/floor/almayer/redfull,
 /area/almayer/engineering/upper_engineering)
+"arI" = (
+/obj/structure/machinery/computer/telecomms/monitor{
+	pixel_y = 11;
+	pixel_x = 4
+	},
+/obj/structure/sign/safety/hazard{
+	pixel_y = 32
+	},
+/obj/structure/sign/safety/radio_rad{
+	pixel_x = 16;
+	pixel_y = 32
+	},
+/turf/open/floor/almayer/plate,
+/area/almayer/command/telecomms)
+"arJ" = (
+/obj/structure/machinery/computer/telecomms/traffic{
+	pixel_y = 11;
+	pixel_x = -2
+	},
+/obj/structure/sign/safety/laser{
+	pixel_y = 32
+	},
+/turf/open/floor/almayer/plate,
+/area/almayer/command/telecomms)
 "arK" = (
 /obj/structure/machinery/camera/autoname/almayer{
 	dir = 8;
@@ -6769,6 +6850,50 @@
 	},
 /turf/open/floor/almayer/orange/northeast,
 /area/almayer/engineering/upper_engineering)
+"arL" = (
+/obj/structure/machinery/door_control{
+	id = "tcomms_outer";
+	name = "Outer Telecommunications Controls";
+	pixel_x = -22;
+	pixel_y = -10;
+	req_one_access_txt = list(19,7)
+	},
+/turf/open/floor/almayer/orange/west,
+/area/almayer/engineering/upper_engineering)
+"arM" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/structure/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/almayer/orange/west,
+/area/almayer/engineering/upper_engineering)
+"arN" = (
+/obj/structure/window/framed/almayer/hull/hijack_bustable,
+/obj/structure/machinery/door/firedoor/border_only/almayer{
+	dir = 2
+	},
+/obj/structure/machinery/door/poddoor/almayer{
+	id = "tcomms_inner";
+	name = "\improper Telecommunications Blast Door"
+	},
+/turf/open/floor/plating,
+/area/almayer/command/telecomms)
+"arO" = (
+/obj/structure/machinery/door/airlock/almayer/secure/reinforced{
+	dir = 2;
+	name = "Telecommunications Proper"
+	},
+/obj/structure/machinery/door/firedoor/border_only/almayer{
+	dir = 2
+	},
+/obj/structure/machinery/door/poddoor/almayer{
+	id = "tcomms_inner";
+	name = "\improper Telecommunications Blast Door"
+	},
+/turf/open/floor/almayer/test_floor4,
+/area/almayer/command/telecomms)
 "arP" = (
 /obj/structure/sign/safety/hazard{
 	pixel_y = 32
@@ -6779,6 +6904,17 @@
 	},
 /turf/open/floor/almayer/silver/north,
 /area/almayer/command/cic)
+"arQ" = (
+/obj/structure/machinery/telecomms/bus/preset_one,
+/obj/structure/machinery/telecomms/relay/preset/telecomms{
+	listening_level = 4;
+	pixel_y = 14;
+	layer = 6
+	},
+/turf/open/floor/almayer/test_floor5{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
 "arR" = (
 /obj/structure/machinery/status_display{
 	pixel_y = 30
@@ -6786,25 +6922,194 @@
 /obj/structure/prop/almayer/computers/sensor_computer1,
 /turf/open/floor/almayer/silver/northeast,
 /area/almayer/command/cic)
+"arS" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "W"
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "E";
+	pixel_x = 1
+	},
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
 "arT" = (
 /obj/structure/target{
 	name = "punching bag"
 	},
 /turf/open/floor/almayer,
 /area/almayer/living/gym)
+"arU" = (
+/obj/structure/machinery/telecomms/server/presets/common,
+/obj/structure/machinery/telecomms/processor/preset_one{
+	pixel_y = 16;
+	layer = 3.1
+	},
+/turf/open/floor/almayer/test_floor5{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
 "arV" = (
 /turf/open/floor/plating/plating_catwalk,
 /area/almayer/command/lifeboat)
+"arW" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "W"
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "SE-out";
+	pixel_x = 1;
+	pixel_y = -1
+	},
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
 "arX" = (
 /obj/structure/pipes/vents/pump/on,
 /turf/open/floor/almayer/dark_sterile,
 /area/almayer/medical/chemistry)
+"arY" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "S";
+	layer = 3.3
+	},
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
+"arZ" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "E";
+	pixel_x = 1
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "SW-out"
+	},
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
+"asa" = (
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
+"asb" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "E";
+	pixel_x = 1
+	},
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
 "asc" = (
 /turf/open/floor/almayer/silver/north,
 /area/almayer/command/cic)
+"asd" = (
+/obj/structure/machinery/telecomms/hub/preset,
+/turf/open/floor/almayer/test_floor5{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
 "ase" = (
 /turf/open/floor/almayer/cargo,
 /area/almayer/living/pilotbunks)
+"asf" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "NE-out";
+	pixel_x = 1;
+	pixel_y = 1
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "SE-out";
+	pixel_x = 1;
+	pixel_y = -1
+	},
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
+"asg" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "E";
+	pixel_x = 1
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "NW-out";
+	pixel_y = 1
+	},
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
+"ash" = (
+/obj/structure/machinery/telecomms/server/presets/engineering,
+/obj/structure/machinery/telecomms/processor/preset_four{
+	pixel_y = 16;
+	layer = 3.1
+	},
+/turf/open/floor/almayer/test_floor5{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
+"asi" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "W"
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "E";
+	pixel_x = 1
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "N";
+	pixel_y = 1
+	},
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
+"asj" = (
+/obj/structure/machinery/telecomms/bus/preset_three,
+/obj/structure/machinery/telecomms/broadcaster/preset_left{
+	pixel_y = 14;
+	layer = 3.02
+	},
+/turf/open/floor/almayer/test_floor5{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
+"ask" = (
+/obj/structure/machinery/telecomms/bus/preset_four,
+/obj/structure/machinery/telecomms/broadcaster/preset_right{
+	pixel_y = 14;
+	layer = 3.02
+	},
+/turf/open/floor/almayer/test_floor5{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
+"asl" = (
+/obj/effect/decal/warning_stripes{
+	icon_state = "W"
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "E";
+	pixel_x = 1
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "N";
+	pixel_y = 1
+	},
+/obj/structure/machinery/camera/autoname/almayer{
+	name = "ship-grade camera"
+	},
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
 "asm" = (
 /obj/structure/stairs{
 	dir = 4
@@ -6824,6 +7129,16 @@
 /obj/structure/machinery/door/poddoor/almayer/biohazard/white,
 /turf/open/floor/plating,
 /area/almayer/medical/upper_medical)
+"aso" = (
+/obj/structure/machinery/telecomms/server/presets/command,
+/obj/structure/machinery/blackbox_recorder{
+	pixel_y = 16;
+	layer = 3.1
+	},
+/turf/open/floor/almayer/test_floor5{
+	allow_construction = 0
+	},
+/area/almayer/command/telecomms)
 "asr" = (
 /obj/structure/bed/chair/comfy/alpha{
 	dir = 8
@@ -6865,27 +7180,26 @@
 	},
 /turf/open/floor/almayer/plate,
 /area/almayer/hallways/lower/repair_bay)
-"asH" = (
-/obj/structure/machinery/telecomms/bus/preset_three,
-/turf/open/floor/almayer/tcomms,
-/area/almayer/command/telecomms)
-"asI" = (
-/obj/structure/machinery/telecomms/bus/preset_two,
-/turf/open/floor/almayer/tcomms,
-/area/almayer/command/telecomms)
 "asJ" = (
-/obj/structure/machinery/telecomms/bus/preset_four,
-/turf/open/floor/almayer/tcomms,
+/obj/structure/machinery/light{
+	dir = 8
+	},
+/obj/structure/machinery/telecomms/server/presets/squads,
+/obj/structure/machinery/telecomms/processor/preset_two{
+	pixel_y = 16;
+	layer = 3.1
+	},
+/turf/open/floor/almayer/test_floor5{
+	allow_construction = 0
+	},
 /area/almayer/command/telecomms)
 "asK" = (
-/obj/structure/machinery/telecomms/bus/preset_one,
-/turf/open/floor/almayer/tcomms,
-/area/almayer/command/telecomms)
-"asL" = (
-/obj/structure/machinery/telecomms/relay/preset/telecomms{
-	listening_level = 4
+/obj/effect/decal/warning_stripes{
+	icon_state = "W"
 	},
-/turf/open/floor/almayer/tcomms,
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
+	},
 /area/almayer/command/telecomms)
 "asM" = (
 /obj/effect/step_trigger/teleporter_vector{
@@ -6963,24 +7277,10 @@
 "atc" = (
 /turf/open/floor/almayer/orange/east,
 /area/almayer/engineering/upper_engineering)
-"atf" = (
-/obj/structure/surface/table/almayer,
-/obj/item/tool/pen,
-/turf/open/floor/almayer/plate,
-/area/almayer/command/telecomms)
 "atg" = (
 /obj/structure/bed/sofa/vert/grey/top,
 /turf/open/floor/almayer,
 /area/almayer/command/lifeboat)
-"atk" = (
-/obj/structure/machinery/door/airlock/almayer/secure/reinforced,
-/obj/structure/machinery/door/poddoor/almayer{
-	dir = 4;
-	id = "tcomms_apc";
-	name = "\improper Telecommunications Power Storage"
-	},
-/turf/open/floor/almayer/test_floor4,
-/area/almayer/command/telecomms)
 "atm" = (
 /turf/open/floor/plating/plating_catwalk,
 /area/almayer/command/telecomms)
@@ -7113,10 +7413,6 @@
 /obj/structure/pipes/standard/simple/hidden/supply/no_boom,
 /turf/closed/wall/almayer/aicore/hull,
 /area/almayer/command/airoom)
-"aui" = (
-/obj/structure/machinery/telecomms/hub/preset,
-/turf/open/floor/almayer/tcomms,
-/area/almayer/command/telecomms)
 "auj" = (
 /obj/structure/surface/table/almayer,
 /obj/structure/machinery/computer/cameras/almayer,
@@ -7154,20 +7450,6 @@
 "auB" = (
 /turf/open/floor/almayer/orangecorner,
 /area/almayer/engineering/upper_engineering)
-"auH" = (
-/obj/structure/machinery/door_control{
-	id = "tcomms_apc";
-	name = "Telecommuncation Power";
-	pixel_x = -25
-	},
-/obj/structure/machinery/door/airlock/almayer/secure/reinforced{
-	access_modified = 1;
-	dir = 2;
-	name = "Telecommunications";
-	req_access_txt = "6"
-	},
-/turf/open/floor/almayer/test_floor4,
-/area/almayer/command/telecomms)
 "auL" = (
 /obj/structure/surface/table/almayer,
 /obj/item/stack/sheet/plasteel{
@@ -7310,27 +7592,32 @@
 	},
 /turf/open/floor/almayer/test_floor4,
 /area/almayer/powered)
-"avN" = (
-/obj/structure/machinery/telecomms/processor/preset_two,
-/turf/open/floor/almayer/tcomms,
-/area/almayer/command/telecomms)
-"avO" = (
-/obj/structure/machinery/telecomms/processor/preset_three,
-/turf/open/floor/almayer/tcomms,
-/area/almayer/command/telecomms)
-"avP" = (
-/obj/structure/machinery/telecomms/processor/preset_four,
-/turf/open/floor/almayer/tcomms,
-/area/almayer/command/telecomms)
 "avQ" = (
-/obj/structure/machinery/telecomms/processor/preset_one,
-/turf/open/floor/almayer/tcomms,
+/obj/effect/decal/warning_stripes{
+	icon_state = "W"
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "E";
+	pixel_x = 1
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "S";
+	layer = 3.3
+	},
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
+	},
 /area/almayer/command/telecomms)
 "avR" = (
+/obj/structure/machinery/telecomms/bus/preset_two,
 /obj/structure/machinery/telecomms/relay/preset/telecomms{
-	listening_level = 6
+	listening_level = 6;
+	pixel_y = 14;
+	layer = 6
 	},
-/turf/open/floor/almayer/tcomms,
+/turf/open/floor/almayer/test_floor5{
+	allow_construction = 0
+	},
 /area/almayer/command/telecomms)
 "avS" = (
 /obj/structure/bed/chair/office/dark{
@@ -7421,11 +7708,10 @@
 /turf/open/floor/almayer/aicore/glowing/no_build,
 /area/almayer/command/airoom)
 "awv" = (
-/obj/structure/machinery/computer/telecomms/monitor,
-/turf/open/floor/almayer/plate,
-/area/almayer/command/telecomms)
-"awx" = (
-/turf/open/floor/almayer/orange/east,
+/obj/structure/machinery/telecomms/server/presets/security,
+/turf/open/floor/almayer/test_floor5{
+	allow_construction = 0
+	},
 /area/almayer/command/telecomms)
 "awy" = (
 /obj/structure/pipes/standard/simple/hidden/supply{
@@ -7577,15 +7863,31 @@
 /turf/open/floor/almayer/mono,
 /area/almayer/medical/hydroponics)
 "axo" = (
-/obj/structure/window/framed/almayer,
-/turf/open/floor/plating,
+/obj/structure/bed/chair/office/dark{
+	dir = 1
+	},
+/turf/open/floor/almayer/plate,
 /area/almayer/command/telecomms)
 "axp" = (
 /turf/open/floor/almayer/blue/north,
 /area/almayer/command/cic)
 "axu" = (
-/obj/structure/machinery/computer/telecomms/server,
-/turf/open/floor/almayer/plate,
+/obj/structure/machinery/power/apc/almayer/east,
+/obj/effect/decal/warning_stripes{
+	icon_state = "N";
+	pixel_y = 1
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "S";
+	layer = 3.3
+	},
+/obj/effect/decal/warning_stripes{
+	icon_state = "E";
+	pixel_x = 1
+	},
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
+	},
 /area/almayer/command/telecomms)
 "axw" = (
 /obj/structure/machinery/camera/autoname/almayer{
@@ -7687,25 +7989,6 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/almayer/engineering/upper_engineering/port)
-"axV" = (
-/obj/structure/machinery/telecomms/server/presets/command,
-/turf/open/floor/almayer/tcomms,
-/area/almayer/command/telecomms)
-"axW" = (
-/obj/structure/machinery/telecomms/server/presets/security,
-/turf/open/floor/almayer/tcomms,
-/area/almayer/command/telecomms)
-"axX" = (
-/obj/structure/machinery/telecomms/server/presets/squads,
-/obj/structure/sign/safety/commline_connection{
-	pixel_y = -32
-	},
-/obj/structure/sign/safety/rad_shield{
-	pixel_x = 8;
-	pixel_y = -32
-	},
-/turf/open/floor/almayer/tcomms,
-/area/almayer/command/telecomms)
 "axY" = (
 /obj/structure/machinery/door/poddoor/shutters/almayer{
 	id = "laddernorthwest";
@@ -7878,20 +8161,17 @@
 /turf/open/floor/almayer/test_floor4,
 /area/almayer/hallways/lower/starboard_fore_hallway)
 "azc" = (
-/obj/structure/machinery/computer/telecomms/traffic,
-/turf/open/floor/almayer/plate,
-/area/almayer/command/telecomms)
-"azd" = (
 /obj/structure/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/almayer/orangecorner/east,
+/obj/structure/machinery/telecomms/receiver/preset,
+/turf/open/floor/almayer/test_floor5{
+	allow_construction = 0
+	},
 /area/almayer/command/telecomms)
 "aze" = (
-/obj/structure/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/almayer/orangecorner/north,
+/obj/structure/machinery/vending/cola,
+/turf/open/floor/almayer/orange/west,
 /area/almayer/engineering/upper_engineering)
 "azg" = (
 /obj/structure/largecrate/random/barrel/yellow,
@@ -8078,8 +8358,15 @@
 /turf/open/floor/almayer/mono,
 /area/almayer/medical/hydroponics)
 "aAy" = (
-/obj/structure/machinery/door/airlock/almayer/secure/reinforced,
-/turf/open/floor/almayer/test_floor4,
+/obj/structure/pipes/vents/pump/no_boom{
+	name = "Secure Reinforced Air Vent";
+	welded = 1;
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/almayer/orange/north,
 /area/almayer/command/telecomms)
 "aAA" = (
 /turf/open/floor/almayer/uscm/directional/east,
@@ -8156,32 +8443,10 @@
 /turf/open/floor/almayer/orange/east,
 /area/almayer/hallways/lower/starboard_midship_hallway)
 "aAZ" = (
-/obj/structure/bed/chair/office/light{
-	dir = 8
+/obj/structure/machinery/telecomms/receiver/preset_left,
+/turf/open/floor/almayer/test_floor5{
+	allow_construction = 0
 	},
-/obj/structure/pipes/vents/pump/no_boom{
-	dir = 4
-	},
-/turf/open/floor/almayer/plate,
-/area/almayer/command/telecomms)
-"aBb" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4;
-	icon_state = "pipe-c"
-	},
-/obj/structure/pipes/standard/simple/hidden/supply/no_boom{
-	dir = 4
-	},
-/turf/open/floor/almayer/plate,
-/area/almayer/command/telecomms)
-"aBc" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/pipes/standard/simple/hidden/supply/no_boom{
-	dir = 4
-	},
-/turf/open/floor/almayer/plate,
 /area/almayer/command/telecomms)
 "aBd" = (
 /obj/effect/decal/warning_stripes{
@@ -8204,23 +8469,6 @@
 	dir = 4
 	},
 /area/almayer/medical/containment/cell)
-"aBf" = (
-/obj/structure/machinery/door/airlock/almayer/secure/reinforced{
-	access_modified = 1;
-	name = "Telecommunications";
-	req_access_txt = "6"
-	},
-/obj/structure/machinery/door/firedoor/border_only/almayer{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/pipes/standard/simple/hidden/supply/no_boom{
-	dir = 4
-	},
-/turf/open/floor/almayer/test_floor4,
-/area/almayer/command/telecomms)
 "aBh" = (
 /obj/structure/disposalpipe/junction,
 /obj/structure/pipes/standard/manifold/hidden/supply{
@@ -8544,29 +8792,6 @@
 /obj/structure/disposalpipe/trunk,
 /turf/open/floor/almayer/silver/northwest,
 /area/almayer/command/computerlab)
-"aDa" = (
-/obj/structure/surface/table/almayer,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/turf/open/floor/almayer/plate,
-/area/almayer/command/telecomms)
-"aDb" = (
-/obj/structure/machinery/camera/autoname/almayer{
-	dir = 8;
-	name = "ship-grade camera"
-	},
-/obj/structure/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/almayer/orangecorner,
-/area/almayer/command/telecomms)
-"aDe" = (
-/obj/structure/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/almayer/orangecorner/west,
-/area/almayer/engineering/upper_engineering)
 "aDh" = (
 /turf/open/floor/almayer/cargo,
 /area/almayer/engineering/upper_engineering)
@@ -8878,15 +9103,6 @@
 /obj/structure/machinery/chem_dispenser/research,
 /turf/open/floor/almayer/sterile_green_side,
 /area/almayer/medical/medical_science)
-"aFh" = (
-/obj/structure/surface/table/almayer,
-/obj/item/folder/black,
-/turf/open/floor/almayer/plate,
-/area/almayer/command/telecomms)
-"aFi" = (
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/plating/plating_catwalk,
-/area/almayer/command/telecomms)
 "aFl" = (
 /turf/open/floor/almayer/test_floor4,
 /area/almayer/engineering/upper_engineering)
@@ -9135,20 +9351,6 @@
 "aHq" = (
 /turf/closed/wall/almayer,
 /area/almayer/command/computerlab)
-"aHr" = (
-/obj/structure/machinery/disposal,
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
-/turf/open/floor/almayer/plate,
-/area/almayer/command/telecomms)
-"aHs" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8;
-	icon_state = "pipe-c"
-	},
-/turf/open/floor/plating/plating_catwalk,
-/area/almayer/command/telecomms)
 "aHu" = (
 /obj/structure/pipes/standard/simple/hidden/supply,
 /obj/effect/decal/warning_stripes{
@@ -9341,13 +9543,17 @@
 /turf/open/floor/almayer/sterile_green_corner/west,
 /area/almayer/medical/containment)
 "aIT" = (
-/obj/structure/machinery/door/airlock/almayer/secure/reinforced{
-	access_modified = 1;
-	dir = 2;
-	name = "Telecommunications";
-	req_access_txt = "6"
+/obj/structure/machinery/computer/telecomms/server{
+	pixel_y = 11
 	},
-/turf/open/floor/almayer/test_floor4,
+/obj/structure/sign/safety/fibre_optics{
+	pixel_y = 32
+	},
+/obj/structure/sign/safety/commline_connection{
+	pixel_x = 15;
+	pixel_y = 32
+	},
+/turf/open/floor/almayer/plate,
 /area/almayer/command/telecomms)
 "aIU" = (
 /obj/structure/machinery/light{
@@ -9703,22 +9909,17 @@
 /turf/open/floor/almayer/silver/east,
 /area/almayer/hallways/upper/midship_hallway)
 "aMm" = (
-/obj/structure/surface/table/almayer,
-/obj/item/tool/crowbar,
-/obj/structure/sign/safety/rad_shield{
-	pixel_x = 15;
-	pixel_y = 32
-	},
-/obj/structure/sign/safety/hazard{
-	pixel_y = 32
-	},
-/turf/open/floor/almayer/plate,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/almayer/orange/east,
 /area/almayer/command/telecomms)
 "aMo" = (
-/obj/structure/machinery/alarm/almayer{
-	dir = 1
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/turf/open/floor/plating/plating_catwalk,
+/obj/structure/pipes/standard/simple/hidden/supply/no_boom{
+	dir = 4
+	},
+/turf/open/floor/almayer/orange/north,
 /area/almayer/command/telecomms)
 "aMq" = (
 /obj/structure/surface/table/almayer,
@@ -9941,25 +10142,45 @@
 /turf/open/floor/almayer/research/containment/corner/north,
 /area/almayer/medical/containment/cell)
 "aOq" = (
-/obj/structure/surface/table/almayer,
+/obj/structure/surface/rack,
+/obj/effect/spawner/random/toolbox,
 /obj/item/tool/extinguisher,
-/turf/open/floor/almayer/plate,
+/turf/open/floor/almayer/orange/southeast,
 /area/almayer/command/telecomms)
 "aOr" = (
-/obj/structure/machinery/light,
-/turf/open/floor/almayer/plate,
+/obj/structure/machinery/camera/autoname/almayer{
+	dir = 4;
+	name = "ship-grade camera"
+	},
+/obj/structure/surface/rack,
+/obj/item/device/radio{
+	pixel_x = 6
+	},
+/obj/item/device/radio{
+	pixel_x = 6
+	},
+/obj/item/device/radio{
+	pixel_x = 6
+	},
+/obj/item/device/radio/headset{
+	pixel_x = -6;
+	pixel_y = -2
+	},
+/obj/item/device/radio/headset{
+	pixel_x = -6;
+	pixel_y = -2
+	},
+/obj/item/device/radio/headset{
+	pixel_x = -6;
+	pixel_y = -2
+	},
+/turf/open/floor/almayer/orange/southwest,
 /area/almayer/command/telecomms)
 "aOs" = (
 /turf/open/floor/almayer/plate,
 /area/almayer/command/telecomms)
 "aOt" = (
-/obj/structure/closet/secure_closet/engineering_welding,
-/obj/item/device/radio/intercom{
-	freerange = 1;
-	name = "General Listening Channel";
-	pixel_y = -28
-	},
-/turf/open/floor/almayer/cargo,
+/turf/open/floor/almayer/orange,
 /area/almayer/command/telecomms)
 "aOy" = (
 /obj/structure/machinery/light{
@@ -9987,9 +10208,7 @@
 /turf/open/floor/almayer/orange,
 /area/almayer/engineering/upper_engineering)
 "aOF" = (
-/obj/structure/bed/chair{
-	dir = 1
-	},
+/obj/structure/machinery/vending/coffee,
 /turf/open/floor/almayer/orange/southeast,
 /area/almayer/engineering/upper_engineering)
 "aOG" = (
@@ -10800,9 +11019,8 @@
 /turf/open/floor/almayer/orange/north,
 /area/almayer/engineering/upper_engineering/starboard)
 "aVF" = (
-/obj/structure/closet/secure_closet/engineering_electrical,
-/obj/structure/machinery/light/small,
-/turf/open/floor/almayer/cargo,
+/obj/structure/machinery/light,
+/turf/open/floor/almayer/orange,
 /area/almayer/command/telecomms)
 "aVG" = (
 /turf/open/floor/almayer/silver/southwest,
@@ -12188,16 +12406,6 @@
 	},
 /turf/open/floor/almayer/red,
 /area/almayer/squads/alpha)
-"bhf" = (
-/obj/structure/machinery/light{
-	dir = 4
-	},
-/obj/structure/machinery/telecomms/broadcaster/preset_left,
-/obj/structure/sign/safety/laser{
-	pixel_y = 32
-	},
-/turf/open/floor/almayer/tcomms,
-/area/almayer/command/telecomms)
 "bhg" = (
 /obj/structure/pipes/standard/simple/hidden/supply{
 	dir = 9
@@ -14100,12 +14308,6 @@
 /obj/structure/machinery/disposal,
 /turf/open/floor/almayer,
 /area/almayer/shipboard/starboard_missiles)
-"bzD" = (
-/obj/structure/machinery/door/poddoor/almayer{
-	id = "tcomms"
-	},
-/turf/open/floor/almayer/test_floor4,
-/area/almayer/command/telecomms)
 "bzI" = (
 /obj/effect/decal/warning_stripes{
 	icon_state = "W"
@@ -21391,10 +21593,6 @@
 /obj/structure/machinery/cm_vending/clothing/dress,
 /turf/open/floor/almayer/cargo,
 /area/almayer/command/cic)
-"dBG" = (
-/obj/structure/machinery/vending/snack,
-/turf/open/floor/almayer/orangefull,
-/area/almayer/engineering/upper_engineering)
 "dBH" = (
 /obj/structure/window/framed/almayer/white,
 /turf/open/floor/plating,
@@ -26118,12 +26316,17 @@
 /turf/open/floor/almayer/dark_sterile,
 /area/almayer/medical/lower_medical_medbay)
 "fDG" = (
-/obj/structure/machinery/vending/coffee,
-/obj/structure/machinery/light{
-	dir = 8
+/obj/structure/machinery/door/airlock/multi_tile/almayer/engidoor{
+	dir = 1;
+	name = "\improper Telecommunications"
 	},
-/turf/open/floor/almayer/orangefull,
-/area/almayer/engineering/upper_engineering)
+/obj/structure/machinery/door/poddoor/shutters/almayer{
+	dir = 4;
+	name = "\improper Telecommunications Reception";
+	id = "tcomms_outer"
+	},
+/turf/open/floor/almayer/test_floor4,
+/area/almayer/command/telecomms)
 "fDJ" = (
 /obj/effect/landmark/start/marine/engineer/charlie,
 /obj/effect/landmark/late_join/charlie,
@@ -38408,11 +38611,22 @@
 /turf/open/floor/plating,
 /area/almayer/shipboard/brig/medical)
 "kTv" = (
-/obj/structure/machinery/light{
-	dir = 4
+/obj/structure/machinery/disposal{
+	pixel_x = -6;
+	pixel_y = 4
 	},
-/obj/structure/machinery/telecomms/broadcaster/preset_right,
-/turf/open/floor/almayer/tcomms,
+/obj/structure/disposalpipe/trunk,
+/obj/item/device/radio/intercom{
+	freerange = 1;
+	name = "General Listening Channel";
+	pixel_y = 28
+	},
+/obj/structure/flora/pottedplant{
+	icon_state = "pottedplant_17";
+	pixel_x = 12;
+	pixel_y = 9
+	},
+/turf/open/floor/plating/plating_catwalk,
 /area/almayer/command/telecomms)
 "kTN" = (
 /obj/structure/machinery/light,
@@ -45200,16 +45414,10 @@
 /turf/open/floor/almayer/orangecorner/east,
 /area/almayer/hallways/upper/aft_hallway)
 "nSG" = (
-/obj/structure/machinery/door_control{
-	id = "tcomms";
-	name = "Telecommunications Entrance";
-	pixel_y = 25
+/obj/structure/machinery/door/airlock/almayer/engineering/glass{
+	name = "\improper Telecommunications Storage"
 	},
-/obj/structure/sign/safety/fibre_optics{
-	pixel_x = 15;
-	pixel_y = 32
-	},
-/turf/open/floor/plating/plating_catwalk,
+/turf/open/floor/almayer/test_floor4,
 /area/almayer/command/telecomms)
 "nSS" = (
 /obj/structure/pipes/standard/manifold/hidden/supply{
@@ -57633,11 +57841,8 @@
 /turf/open/floor/plating/plating_catwalk,
 /area/almayer/shipboard/brig/cells)
 "thv" = (
-/obj/structure/machinery/camera/autoname/almayer{
-	dir = 8;
-	name = "ship-grade camera"
-	},
-/turf/open/floor/almayer/plate,
+/obj/structure/machinery/alarm/almayer,
+/turf/open/floor/almayer/orange,
 /area/almayer/command/telecomms)
 "thA" = (
 /obj/structure/window/reinforced{
@@ -60370,13 +60575,6 @@
 	},
 /turf/open/floor/almayer/plate,
 /area/almayer/maint/hull/lower/l_f_p)
-"urM" = (
-/obj/structure/machinery/light{
-	dir = 8
-	},
-/obj/structure/machinery/vending/cigarette,
-/turf/open/floor/almayer/orangefull,
-/area/almayer/engineering/upper_engineering)
 "urN" = (
 /obj/effect/landmark/start/marine/leader/charlie,
 /obj/effect/landmark/late_join/charlie,
@@ -65166,9 +65364,19 @@
 /turf/open/floor/carpet,
 /area/almayer/command/cichallway)
 "wjv" = (
-/obj/structure/machinery/vending/cola,
-/turf/open/floor/almayer/orangefull,
-/area/almayer/engineering/upper_engineering)
+/obj/structure/pipes/standard/simple/hidden/supply/no_boom{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/machinery/door/poddoor/shutters/almayer{
+	dir = 4;
+	name = "\improper Telecommunications Reception";
+	id = "tcomms_outer"
+	},
+/turf/open/floor/almayer/test_floor4,
+/area/almayer/command/telecomms)
 "wjz" = (
 /obj/structure/machinery/light{
 	dir = 8
@@ -69251,14 +69459,13 @@
 /turf/open/floor/almayer/uscm/directional/north,
 /area/almayer/living/briefing)
 "xRH" = (
-/obj/structure/sign/safety/fibre_optics{
-	pixel_y = 32
+/obj/effect/decal/warning_stripes{
+	icon_state = "N";
+	pixel_y = 1
 	},
-/obj/structure/sign/safety/commline_connection{
-	pixel_x = 15;
-	pixel_y = 32
+/turf/open/floor/almayer/tcomms{
+	allow_construction = 0
 	},
-/turf/open/floor/almayer/tcomms,
 /area/almayer/command/telecomms)
 "xRJ" = (
 /obj/structure/bed/chair/comfy/bravo{
@@ -69587,13 +69794,8 @@
 /turf/open/floor/almayer/mono,
 /area/almayer/lifeboat_pumps/south1)
 "xYZ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/pipes/standard/simple/hidden/supply/no_boom{
-	dir = 4
-	},
-/turf/open/floor/almayer,
+/obj/structure/machinery/vending/snack,
+/turf/open/floor/almayer/orange/west,
 /area/almayer/engineering/upper_engineering)
 "xZk" = (
 /obj/item/prop/helmetgarb/gunoil{
@@ -83707,7 +83909,7 @@ apq
 amh
 aaO
 apf
-apq
+afy
 aiX
 bOw
 mYt
@@ -83910,8 +84112,8 @@ aaL
 abg
 aaQ
 aaL
-aaz
-aiX
+amh
+aeJ
 lEV
 ghF
 ghF
@@ -111013,18 +111215,18 @@ nsH
 alL
 alL
 alL
-jvY
-jvY
-jvY
-jvY
-jvY
-jvY
-jvY
-jvY
-jvY
 alL
 alL
 alL
+alL
+alL
+alL
+alL
+jvY
+jvY
+jvY
+jvY
+jvY
 iso
 ceV
 nsH
@@ -111213,20 +111415,20 @@ nZf
 rho
 jIs
 emL
-jvY
-jvY
-jvY
-jvY
-apW
+alL
 aqV
-asH
-aui
-avN
 aqV
-axV
+aqV
+aqV
+aqV
+aqV
+aqV
+aqV
+aqV
 jvY
-jvY
-jvY
+arC
+aro
+ahS
 jvY
 gqI
 iCT
@@ -111416,18 +111618,18 @@ hlj
 giW
 puP
 tfF
+alL
+aqV
 jvY
-arg
-atf
 jvY
-apX
-aqb
-asI
-aqb
-avO
-aqb
-axW
 jvY
+jvY
+jvY
+jvY
+jvY
+aqV
+jvY
+arD
 aMm
 aOq
 jvY
@@ -111619,20 +111821,20 @@ mdm
 lLt
 qdJ
 vCv
+alL
+aqV
 jvY
-arh
-atm
-jvY
+ash
 apY
-aqb
+asd
 asJ
-aqb
-avP
-aqb
-axX
+arU
+jvY
+jvY
+jvY
 jvY
 nSG
-aOs
+jvY
 jvY
 lLt
 poD
@@ -111822,19 +112024,19 @@ aep
 lLt
 lGh
 vCv
+alL
+aqV
 jvY
-ari
-aoP
-jvY
+asi
 apZ
-aqb
 asK
-aqb
+asK
+arW
 avQ
-aqb
+arN
 aqa
 axo
-atm
+art
 aOr
 jvY
 lLt
@@ -112025,20 +112227,20 @@ aep
 lLt
 yiu
 vCv
+alL
+aqV
 jvY
-arj
-atm
-jvY
+asj
 xRH
+asa
+asa
+arY
+arQ
+arN
 aqb
-aqb
-aqb
-aqb
-aqb
-aqb
-bzD
-atm
 aOs
+aru
+ajA
 jvY
 lLt
 yiu
@@ -112228,19 +112430,19 @@ aep
 lLt
 poD
 vCv
+alL
+aqV
 jvY
-ark
-atm
-jvY
-bhf
-aqb
-asL
-aqb
+ask
+xRH
+asa
+asa
+arY
 avR
-aqb
+jvY
 kTv
-axo
-atm
+arE
+arv
 thv
 jvY
 lLt
@@ -112431,20 +112633,20 @@ aep
 umI
 ddO
 umI
-jvY
 alL
-atk
+aqV
 jvY
-jvY
-axo
-axo
-axo
-axo
-axo
-jvY
-jvY
+asl
+asg
+asf
+asb
+arZ
+arS
+arO
+atm
+aOs
 aAy
-alL
+ajM
 jvY
 umI
 juj
@@ -112634,18 +112836,18 @@ aep
 sHI
 jao
 qhT
-jvY
-arl
-atm
 alL
+aqV
+jvY
+aso
 awv
 axu
 azc
 aAZ
-aDa
-aFh
-aHr
-alL
+jvY
+jvY
+jvY
+arI
 aMo
 aOt
 jvY
@@ -112837,19 +113039,19 @@ cMx
 sHI
 jao
 qhT
+alL
+aqV
 jvY
-abF
-atm
-auH
-atm
-atm
-atm
-aBb
-aFi
-aFi
-aHs
+jvY
+jvY
+jvY
+jvY
+jvY
+jvY
+aqV
+jvY
 aIT
-atm
+arw
 aVF
 jvY
 sHI
@@ -113040,20 +113242,20 @@ cMx
 nSw
 qsG
 qhT
+alL
+aqV
+aqV
+aqV
+aqV
+aqV
+aqV
+aqV
+aqV
+aqV
 jvY
-jvY
-jvY
-jvY
-awx
-awx
-azd
-aBc
-aDb
-awx
-awx
-jvY
-jvY
-jvY
+arJ
+arx
+aoL
 jvY
 sjG
 lOn
@@ -113244,20 +113446,20 @@ tzF
 qsG
 qhT
 alL
-urM
-dBG
-jvY
-jvY
-jvY
-jvY
-aBf
-jvY
-jvY
+alL
+alL
+alL
+alL
+alL
+alL
+alL
+alL
+alL
 jvY
 jvY
 wjv
 fDG
-alL
+jvY
 sHI
 aPC
 tzF
@@ -113450,15 +113652,15 @@ kwd
 amw
 anO
 arq
-arq
+arM
 arq
 aze
 xYZ
-aDe
 arq
 arq
-arq
-anO
+arM
+arL
+arB
 qaV
 kwd
 acQ
@@ -113656,12 +113858,12 @@ atn
 atn
 sAw
 anP
-aBh
+iJs
 anP
 anP
 iJs
 dFN
-atn
+aBh
 aOB
 aRj
 rUN
