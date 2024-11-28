@@ -207,6 +207,13 @@
 	},
 /turf/open/floor/almayer/test_floor4,
 /area/almayer/living/pilotbunks)
+"aaz" = (
+/obj/structure/machinery/computer/emails{
+	dir = 1
+	},
+/obj/structure/surface/table/almayer,
+/turf/open/floor/almayer/blue,
+/area/almayer/living/offices/flight)
 "aaA" = (
 /obj/structure/surface/table/reinforced/almayer_B,
 /obj/item/storage/fancy/cigarettes/wypacket,
@@ -642,6 +649,10 @@
 "abE" = (
 /turf/closed/wall/almayer,
 /area/almayer/living/basketball)
+"abF" = (
+/obj/item/weapon/twohanded/folded_metal_chair,
+/turf/open/floor/wood/ship,
+/area/almayer/living/offices/flight)
 "abG" = (
 /obj/structure/machinery/vending/coffee{
 	pixel_x = 3;
@@ -6257,13 +6268,6 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/wood/ship,
 /area/almayer/living/offices/flight)
-"aqd" = (
-/obj/structure/window/reinforced,
-/obj/structure/bed/chair{
-	dir = 1
-	},
-/turf/open/floor/wood/ship,
-/area/almayer/living/offices/flight)
 "aqe" = (
 /obj/structure/window/reinforced,
 /turf/open/floor/almayer/blue/east,
@@ -6307,6 +6311,10 @@
 	name = "Inner Office Controls";
 	pixel_x = 10;
 	pixel_y = -20
+	},
+/obj/structure/sign/safety/ammunition{
+	pixel_x = 1;
+	pixel_y = -31
 	},
 /turf/open/floor/almayer/red,
 /area/almayer/shipboard/panic)
@@ -6878,7 +6886,9 @@
 	id = "tcomms_inner";
 	name = "\improper Telecommunications Blast Door"
 	},
-/turf/open/floor/plating,
+/turf/open/floor/plating{
+	allow_construction = 0
+	},
 /area/almayer/command/telecomms)
 "arO" = (
 /obj/structure/machinery/door/airlock/almayer/secure/reinforced{
@@ -6892,7 +6902,9 @@
 	id = "tcomms_inner";
 	name = "\improper Telecommunications Blast Door"
 	},
-/turf/open/floor/almayer/test_floor4,
+/turf/open/floor/almayer/test_floor4{
+	allow_construction = 0
+	},
 /area/almayer/command/telecomms)
 "arP" = (
 /obj/structure/sign/safety/hazard{
@@ -8567,13 +8579,13 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/structure/surface/table/almayer,
 /obj/item/paper_bin/uscm,
 /obj/item/tool/pen,
 /obj/item/device/radio/marine{
 	pixel_x = -6;
 	pixel_y = 19
 	},
+/obj/structure/surface/table/almayer,
 /turf/open/floor/almayer/blue,
 /area/almayer/living/offices/flight)
 "aBx" = (
@@ -44267,6 +44279,10 @@
 	pixel_y = -8;
 	req_one_access_txt = list(19,35)
 	},
+/obj/structure/machinery/light/small{
+	dir = 4;
+	pixel_y = 4
+	},
 /turf/open/floor/almayer/orange/northeast,
 /area/almayer/engineering/lower/workshop/hangar)
 "npO" = (
@@ -49839,10 +49855,7 @@
 	pixel_x = -7;
 	layer = 4.02
 	},
-/obj/structure/sign/safety/ammunition{
-	pixel_x = -17;
-	pixel_y = -8
-	},
+/obj/structure/machinery/power/apc/almayer/hardened/west,
 /turf/open/floor/almayer/red/southwest,
 /area/almayer/shipboard/panic)
 "pON" = (
@@ -51018,12 +51031,7 @@
 /obj/structure/flora/pottedplant/random{
 	pixel_x = 6
 	},
-/obj/structure/machinery/power/apc/almayer/south{
-	pixel_x = -5
-	},
-/obj/structure/machinery/light{
-	dir = 4
-	},
+/obj/structure/machinery/light,
 /turf/open/floor/almayer/red/southeast,
 /area/almayer/shipboard/panic)
 "qmP" = (
@@ -52358,12 +52366,6 @@
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/almayer/hallways/upper/port)
-"qNK" = (
-/obj/structure/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/almayer/plate,
-/area/almayer/maint/hull/lower/l_f_s)
 "qNR" = (
 /obj/structure/disposalpipe/junction,
 /obj/structure/pipes/standard/manifold/hidden/supply{
@@ -54031,6 +54033,9 @@
 	alpha = 150;
 	icon_state = "lattice12";
 	pixel_y = 16
+	},
+/obj/structure/machinery/light/small{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/almayer/maint/hull/lower/l_f_s)
@@ -69747,6 +69752,9 @@
 /area/almayer/hallways/hangar)
 "xXl" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/almayer/orange/southwest,
 /area/almayer/engineering/lower/workshop/hangar)
 "xXr" = (
@@ -89176,7 +89184,7 @@ kWI
 dvD
 dvD
 rAw
-qNK
+dvD
 xzB
 dvD
 meT
@@ -92830,7 +92838,7 @@ smH
 acq
 aeN
 azl
-ahV
+aqc
 afF
 rYJ
 eXq
@@ -93033,7 +93041,7 @@ eWs
 acu
 aeh
 ahV
-aqc
+abF
 afF
 bLP
 eXq
@@ -93236,7 +93244,7 @@ eWs
 acM
 aqI
 aqt
-aqd
+ais
 afF
 aBw
 apu
@@ -93441,7 +93449,7 @@ aqM
 aqv
 xWp
 aAL
-aBt
+aaz
 apu
 xyw
 bHB
