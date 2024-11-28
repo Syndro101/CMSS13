@@ -3237,7 +3237,7 @@
 /area/almayer/living/captain_mess)
 "aiy" = (
 /obj/structure/pipes/standard/simple/hidden/supply,
-/turf/open/floor/almayer,
+/turf/open/floor/plating/plating_catwalk,
 /area/almayer/living/captain_mess)
 "aiz" = (
 /obj/structure/surface/table/reinforced/almayer_B,
@@ -4911,18 +4911,15 @@
 /area/almayer/living/synthcloset)
 "amQ" = (
 /obj/effect/decal/cleanable/blood/oil/streak,
-/turf/open/floor/plating,
-/area/almayer/lifeboat_pumps/north1)
-"amR" = (
-/turf/open/floor/plating,
+/turf/open/floor/almayer/plate,
 /area/almayer/lifeboat_pumps/north1)
 "amS" = (
 /obj/structure/largecrate/random/case/double,
-/turf/open/floor/plating,
+/turf/open/floor/plating/plating_catwalk,
 /area/almayer/lifeboat_pumps/north1)
 "amT" = (
 /obj/item/frame/rack,
-/turf/open/floor/plating,
+/turf/open/floor/almayer/plate,
 /area/almayer/lifeboat_pumps/north1)
 "amU" = (
 /obj/structure/prop/invuln/lattice_prop{
@@ -4933,15 +4930,19 @@
 	},
 /obj/item/frame/rack,
 /obj/structure/machinery/light/small,
-/turf/open/floor/plating,
+/turf/open/floor/plating/plating_catwalk,
 /area/almayer/lifeboat_pumps/north1)
 "amV" = (
 /obj/structure/largecrate/random/case,
-/turf/open/floor/plating,
+/turf/open/floor/almayer/plate,
 /area/almayer/lifeboat_pumps/north1)
 "amW" = (
 /obj/structure/largecrate/random/barrel/true_random,
-/turf/open/floor/plating,
+/obj/effect/decal/cleanable/cobweb{
+	dir = 8;
+	plane = -6
+	},
+/turf/open/floor/almayer/plate,
 /area/almayer/lifeboat_pumps/north1)
 "amX" = (
 /turf/open/floor/almayer/red/north,
@@ -4968,14 +4969,14 @@
 /area/almayer/engineering/lower/workshop/hangar)
 "amZ" = (
 /obj/effect/landmark/yautja_teleport,
-/turf/open/floor/plating,
+/turf/open/floor/plating/plating_catwalk,
 /area/almayer/lifeboat_pumps/north1)
 "ana" = (
 /turf/open/floor/almayer/orange,
 /area/almayer/engineering/lower/workshop/hangar)
 "anb" = (
 /obj/structure/surface/table/almayer,
-/turf/open/floor/plating,
+/turf/open/floor/almayer/plate,
 /area/almayer/lifeboat_pumps/north1)
 "anc" = (
 /turf/closed/wall/almayer/reinforced/temphull,
@@ -5038,6 +5039,10 @@
 	layer = 3.1;
 	pixel_y = 5
 	},
+/obj/effect/decal/cleanable/cobweb{
+	dir = 8;
+	plane = -6
+	},
 /turf/open/floor/almayer/test_floor5,
 /area/almayer/living/synthcloset)
 "anj" = (
@@ -5045,11 +5050,11 @@
 /obj/structure/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/plating,
+/turf/open/floor/almayer/plate,
 /area/almayer/lifeboat_pumps/north1)
 "ank" = (
 /obj/item/tool/wet_sign,
-/turf/open/floor/plating,
+/turf/open/floor/almayer/plate,
 /area/almayer/lifeboat_pumps/north1)
 "anl" = (
 /obj/structure/machinery/door/airlock/almayer/maint,
@@ -5073,11 +5078,11 @@
 	pixel_x = 16;
 	pixel_y = -1
 	},
-/turf/open/floor/plating,
+/turf/open/floor/almayer/plate,
 /area/almayer/lifeboat_pumps/north1)
 "ano" = (
 /obj/item/storage/toolbox/mechanical,
-/turf/open/floor/plating,
+/turf/open/floor/almayer/plate,
 /area/almayer/lifeboat_pumps/north1)
 "anp" = (
 /obj/structure/flora/bush/ausbushes/ppflowers,
@@ -5118,14 +5123,14 @@
 /obj/structure/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/almayer/plate,
 /area/almayer/lifeboat_pumps/north1)
 "anu" = (
 /obj/structure/platform{
 	layer = 2.9
 	},
 /obj/structure/machinery/recharge_station{
-	layer = 2.89
+	layer = 2.8
 	},
 /turf/open/floor/almayer/test_floor5,
 /area/almayer/living/synthcloset)
@@ -5140,7 +5145,7 @@
 	icon_state = "S"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine,
+/turf/open/floor/almayer/plate,
 /area/almayer/living/synthcloset)
 "anw" = (
 /obj/structure/machinery/flasher{
@@ -5197,25 +5202,27 @@
 /obj/structure/janitorialcart,
 /obj/item/tool/mop,
 /obj/item/reagent_container/glass/bucket/janibucket,
-/turf/open/floor/plating,
+/turf/open/floor/almayer/plate,
 /area/almayer/lifeboat_pumps/north1)
 "anC" = (
 /obj/structure/largecrate/random,
-/turf/open/floor/plating,
+/turf/open/floor/almayer/plate,
 /area/almayer/lifeboat_pumps/north1)
 "anD" = (
 /obj/structure/reagent_dispensers/watertank,
-/turf/open/floor/plating,
+/turf/open/floor/plating/plating_catwalk,
 /area/almayer/lifeboat_pumps/north1)
 "anE" = (
-/obj/structure/machinery/recharge_station,
 /obj/structure/prop/invuln/lattice_prop{
 	alpha = 150;
 	icon_state = "lattice12";
 	pixel_y = 16
 	},
-/obj/structure/machinery/light{
-	dir = 8
+/obj/effect/decal/cleanable/blood/oil,
+/obj/structure/machinery/computer/working_joe{
+	dir = 4;
+	pixel_x = -17;
+	pixel_y = -6
 	},
 /turf/open/floor/almayer/test_floor5,
 /area/almayer/living/synthcloset)
@@ -5228,7 +5235,7 @@
 	icon_state = "lattice12";
 	pixel_y = 16
 	},
-/turf/open/floor/engine,
+/turf/open/floor/plating/plating_catwalk,
 /area/almayer/living/synthcloset)
 "anG" = (
 /obj/effect/decal/warning_stripes{
@@ -5243,9 +5250,6 @@
 /turf/open/floor/engine,
 /area/almayer/living/synthcloset)
 "anH" = (
-/obj/structure/closet/secure_closet/surgical{
-	pixel_x = 30
-	},
 /obj/effect/decal/warning_stripes{
 	icon_state = "E";
 	pixel_x = 1
@@ -5258,7 +5262,12 @@
 	icon_state = "lattice12";
 	pixel_y = 16
 	},
-/turf/open/floor/engine,
+/obj/structure/largecrate/random/mini/wooden{
+	pixel_x = 5;
+	pixel_y = -6;
+	can_block_movement = 0
+	},
+/turf/open/floor/plating/plating_catwalk,
 /area/almayer/living/synthcloset)
 "anI" = (
 /obj/structure/machinery/door/airlock/almayer/maint{
@@ -5268,6 +5277,9 @@
 /area/almayer/lifeboat_pumps/north1)
 "anJ" = (
 /obj/structure/machinery/cm_vending/own_points/experimental_tools,
+/obj/structure/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/almayer/test_floor5,
 /area/almayer/living/synthcloset)
 "anK" = (
@@ -5278,7 +5290,8 @@
 	icon_state = "N";
 	pixel_y = 1
 	},
-/turf/open/floor/engine,
+/obj/effect/decal/cleanable/generic,
+/turf/open/floor/almayer/plate,
 /area/almayer/living/synthcloset)
 "anL" = (
 /obj/effect/decal/warning_stripes{
@@ -5308,7 +5321,7 @@
 	pixel_y = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/engine,
+/turf/open/floor/almayer/plate,
 /area/almayer/living/synthcloset)
 "anO" = (
 /turf/open/floor/almayer/orange/west,
@@ -5319,11 +5332,9 @@
 /turf/open/floor/almayer,
 /area/almayer/engineering/upper_engineering)
 "anQ" = (
-/obj/structure/surface/table/reinforced/almayer_B,
-/obj/structure/flora/pottedplant/random{
-	pixel_y = 7
-	},
-/turf/open/floor/almayer/tcomms,
+/obj/structure/largecrate/random/case/double,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/almayer/plate,
 /area/almayer/living/synthcloset)
 "anR" = (
 /obj/structure/machinery/cm_vending/clothing/synth/snowflake{
@@ -7318,10 +7329,23 @@
 	},
 /turf/open/floor/almayer,
 /area/almayer/hallways/lower/vehiclehangar)
+"asy" = (
+/obj/effect/landmark/yautja_teleport,
+/turf/open/floor/almayer/plate,
+/area/almayer/lifeboat_pumps/north1)
+"asz" = (
+/obj/structure/largecrate/random/barrel/true_random,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plating/plating_catwalk,
+/area/almayer/lifeboat_pumps/north1)
 "asA" = (
 /obj/structure/pipes/standard/simple/hidden/supply,
 /turf/open/floor/almayer,
 /area/almayer/lifeboat_pumps/north2)
+"asB" = (
+/obj/structure/largecrate/random/barrel/true_random,
+/turf/open/floor/plating/plating_catwalk,
+/area/almayer/lifeboat_pumps/north1)
 "asE" = (
 /obj/structure/pipes/standard/simple/hidden/supply{
 	dir = 4
@@ -93290,7 +93314,7 @@ qdQ
 eFT
 hhA
 adq
-amW
+asz
 anj
 amQ
 akR
@@ -93493,9 +93517,9 @@ add
 add
 add
 adq
-amR
-amZ
-amR
+cUo
+asy
+aTm
 akR
 amy
 ame
@@ -93696,9 +93720,9 @@ aeZ
 aka
 aoI
 anI
-amR
+aTm
 ank
-amR
+cUo
 akR
 kcp
 amf
@@ -93900,7 +93924,7 @@ akc
 buc
 adq
 anA
-amR
+cUo
 amS
 akR
 amB
@@ -94306,7 +94330,7 @@ add
 add
 adq
 amS
-amR
+cUo
 amT
 akR
 amC
@@ -94712,7 +94736,7 @@ akc
 xVI
 adq
 anC
-amR
+aTm
 amV
 akR
 amG
@@ -95320,8 +95344,8 @@ aeZ
 aka
 aoI
 anI
-amR
-amR
+cUo
+cUo
 amZ
 akR
 amK
@@ -95523,7 +95547,7 @@ afr
 akc
 buc
 adq
-amW
+asB
 ant
 anb
 akR
