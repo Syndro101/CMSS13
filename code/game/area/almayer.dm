@@ -179,11 +179,6 @@
 	icon_state = "laundry"
 	fake_zlevel = 1 // upperdeck
 
-/area/almayer/living/auxiliary_officer_office
-	name = "\improper Upper Deck Auxiliary Support Officer office"
-	icon_state = "livingspace"
-	fake_zlevel = 1
-
 /area/almayer/shipboard
 	minimap_color = MINIMAP_AREA_SEC
 
@@ -588,6 +583,16 @@
 /area/almayer/living/officer_study
 	name = "\improper Upper Deck Officer's Study"
 	icon_state = "officerstudy"
+	fake_zlevel = 1 // upperdeck
+
+/area/almayer/living/auxiliary_officer_office
+	name = "\improper Upper Deck Auxiliary Support Officer office"
+	icon_state = "livingspace"
+	fake_zlevel = 1 // upperdeck
+
+/area/almayer/living/intel
+	name = "\improper Intelligence Officer's Bunks"
+	icon_state = "livingspace"
 	fake_zlevel = 1 // upperdeck
 
 /area/almayer/living/cafeteria_port
