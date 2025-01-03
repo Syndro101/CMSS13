@@ -7564,7 +7564,8 @@
 	},
 /obj/structure/largecrate/random/mini/wooden{
 	pixel_y = 5;
-	pixel_x = 3
+	pixel_x = 3;
+	layer = 3.1
 	},
 /turf/open/floor/plating/plating_catwalk,
 /area/almayer/hallways/upper/fore_hallway)
@@ -42121,7 +42122,8 @@
 /obj/structure/largecrate/random/case,
 /obj/structure/largecrate/random/mini{
 	pixel_y = 7;
-	pixel_x = -3
+	pixel_x = -3;
+	layer = 3.1
 	},
 /turf/open/floor/almayer/red/northwest,
 /area/almayer/lifeboat_pumps/south1)
@@ -46444,7 +46446,8 @@
 	},
 /obj/structure/largecrate/random/mini/wooden{
 	pixel_y = 6;
-	pixel_x = 8
+	pixel_x = 8;
+	layer = 3.1
 	},
 /turf/open/floor/almayer/red/northeast,
 /area/almayer/lifeboat_pumps/south1)
