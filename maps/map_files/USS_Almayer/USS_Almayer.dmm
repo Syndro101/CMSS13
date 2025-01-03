@@ -30133,18 +30133,18 @@
 	name = "Reinforced Glass door";
 	req_one_access_txt = list(19,35)
 	},
+/obj/structure/machinery/door/firedoor/border_only/almayer{
+	dir = 1
+	},
 /obj/item/desk_bell{
 	anchored = 1;
-	pixel_x = -9;
-	pixel_y = 12
+	pixel_x = -10;
+	pixel_y = 10
 	},
 /obj/structure/machinery/door/poddoor/shutters/almayer{
 	id = "OTprivacy";
 	name = "\improper Privacy Shutters";
 	unacidable = 1
-	},
-/obj/structure/machinery/door/firedoor/border_only/almayer{
-	dir = 1
 	},
 /turf/open/floor/almayer,
 /area/almayer/engineering/lower/workshop/hangar)
@@ -53742,13 +53742,6 @@
 	pixel_x = 6
 	},
 /obj/structure/machinery/door_control{
-	id = "MTline";
-	name = "Next button";
-	pixel_x = -8;
-	pixel_y = 10;
-	req_one_access_txt = list(19,35)
-	},
-/obj/structure/machinery/door_control{
 	id = "OTprivacy";
 	name = "Privacy Shutters";
 	pixel_x = -8;
@@ -54056,14 +54049,15 @@
 /obj/structure/machinery/door/window/eastleft{
 	req_access = list(19)
 	},
-/obj/item/desk_bell{
-	pixel_y = 11;
-	pixel_x = -7
-	},
 /obj/structure/machinery/door/poddoor/shutters/almayer/open{
 	id = "IO Lab Shutters";
 	name = "\improper Privacy Shutters";
 	dir = 4
+	},
+/obj/item/desk_bell{
+	anchored = 1;
+	pixel_x = -6;
+	pixel_y = 10
 	},
 /turf/open/floor/almayer/silverfull,
 /area/almayer/command/computerlab)
