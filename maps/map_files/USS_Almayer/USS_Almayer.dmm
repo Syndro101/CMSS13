@@ -15744,10 +15744,6 @@
 /obj/structure/pipes/standard/manifold/hidden/supply,
 /turf/open/floor/almayer,
 /area/almayer/maint/hull/upper/u_f_s)
-"bAH" = (
-/obj/structure/largecrate/random/case,
-/turf/open/floor/almayer/red/west,
-/area/almayer/lifeboat_pumps/south1)
 "bAJ" = (
 /obj/structure/sign/safety/terminal{
 	pixel_x = -17
@@ -42116,6 +42112,10 @@
 /area/almayer/command/cic)
 "lWr" = (
 /obj/structure/largecrate/random/case,
+/obj/structure/largecrate/random/mini{
+	pixel_y = 7;
+	pixel_x = -3
+	},
 /turf/open/floor/almayer/red/northwest,
 /area/almayer/lifeboat_pumps/south1)
 "lWt" = (
@@ -46430,6 +46430,14 @@
 "nPa" = (
 /obj/structure/machinery/cm_vending/sorted/medical/wall_med{
 	pixel_y = 25
+	},
+/obj/structure/largecrate/random/mini/ammo{
+	pixel_x = 6;
+	pixel_y = -3
+	},
+/obj/structure/largecrate/random/mini/wooden{
+	pixel_y = 6;
+	pixel_x = 8
 	},
 /turf/open/floor/almayer/red/northeast,
 /area/almayer/lifeboat_pumps/south1)
@@ -96418,7 +96426,7 @@ agZ
 agp
 lIj
 ngf
-bAH
+csI
 goL
 gVF
 aZz
