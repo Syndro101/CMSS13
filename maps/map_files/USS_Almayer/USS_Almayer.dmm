@@ -1617,13 +1617,6 @@
 "aef" = (
 /turf/open/floor/almayer,
 /area/almayer/living/basketball)
-"aeg" = (
-/obj/structure/machinery/cryopod{
-	layer = 3.1;
-	pixel_y = 5
-	},
-/turf/open/floor/almayer/test_floor5,
-/area/almayer/living/bridgebunks)
 "aeh" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -1663,14 +1656,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/engine,
-/area/almayer/living/bridgebunks)
-"aen" = (
-/obj/structure/machinery/cryopod{
-	dir = 1;
-	layer = 3.1;
-	pixel_y = 5
-	},
-/turf/open/floor/almayer/test_floor5,
 /area/almayer/living/bridgebunks)
 "aeo" = (
 /obj/structure/surface/table/reinforced/almayer_B,
@@ -2053,13 +2038,11 @@
 /turf/open/floor/engine,
 /area/almayer/living/bridgebunks)
 "afp" = (
-/obj/structure/machinery/cryopod{
-	dir = 1;
-	layer = 3.1;
-	pixel_y = 5
-	},
 /obj/structure/machinery/light{
 	dir = 4
+	},
+/obj/structure/machinery/cryopod{
+	dir = 1
 	},
 /turf/open/floor/almayer/test_floor5,
 /area/almayer/living/bridgebunks)
@@ -89330,7 +89313,7 @@ agx
 afC
 afn
 aeU
-aeg
+aeU
 aES
 hrI
 tVx
@@ -89939,7 +89922,7 @@ agB
 afd
 afp
 afd
-aen
+afd
 aES
 xBK
 moc
