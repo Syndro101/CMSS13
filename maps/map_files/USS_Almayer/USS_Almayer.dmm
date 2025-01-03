@@ -3518,7 +3518,9 @@
 "aja" = (
 /obj/structure/surface/table/reinforced/almayer_B,
 /obj/structure/machinery/computer/emails{
-	dir = 1
+	dir = 1;
+	pixel_x = 3;
+	pixel_y = 2
 	},
 /obj/structure/machinery/door_control{
 	id = "XO-Office";
@@ -3528,12 +3530,17 @@
 	pixel_y = 12;
 	req_access_txt = "1"
 	},
+/obj/item/storage/fancy/cigar/matchbook/brown{
+	pixel_y = -5;
+	pixel_x = -11
+	},
 /turf/open/floor/carpet,
 /area/almayer/living/numbertwobunks)
 "ajb" = (
 /obj/structure/surface/table/reinforced/almayer_B,
 /obj/item/clipboard{
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 5
 	},
 /obj/item/reagent_container/food/drinks/coffeecup/uscm{
 	pixel_x = -9;
@@ -3543,12 +3550,16 @@
 	dir = 4
 	},
 /obj/item/folder/black_random{
-	pixel_x = -3;
+	pixel_x = -10;
 	pixel_y = -6
 	},
 /obj/item/clothing/suit/storage/webbing{
 	pixel_x = 7;
 	pixel_y = 7
+	},
+/obj/item/storage/fancy/cigar{
+	pixel_y = -4;
+	pixel_x = 3
 	},
 /turf/open/floor/wood/ship,
 /area/almayer/living/numbertwobunks)
@@ -3752,27 +3763,27 @@
 	can_block_movement = 0;
 	density = 0;
 	pixel_x = -8;
-	pixel_y = 13
+	pixel_y = 10
 	},
 /obj/structure/filingcabinet/medical{
 	can_block_movement = 0;
 	density = 0;
 	pixel_x = 8;
-	pixel_y = 13
+	pixel_y = 10
 	},
 /obj/item/reagent_container/food/drinks/bottle/rum{
 	pixel_x = -9;
-	pixel_y = 32
+	pixel_y = 28
 	},
 /obj/item/tool/stamp/hop{
 	name = "Executive Officer's rubber stamp";
 	pixel_x = 10;
-	pixel_y = 25
+	pixel_y = 22
 	},
 /obj/item/prop/helmetgarb/prescription_bottle{
 	desc = "this pill bottle lists the contents as blood-pressure medication, often used by those in stressful situations, the cap has been super-glued shut.";
 	name = "blood pressure medication";
-	pixel_y = 28
+	pixel_y = 24
 	},
 /turf/open/floor/wood/ship,
 /area/almayer/living/numbertwobunks)
@@ -3795,11 +3806,7 @@
 	can_block_movement = 0;
 	density = 0;
 	icon_state = "book-5";
-	pixel_y = 13
-	},
-/obj/item/storage/fancy/cigar{
-	layer = 3.04;
-	pixel_y = 28
+	pixel_y = 10
 	},
 /obj/item/book/manual/medical_diagnostics_manual,
 /obj/item/book/manual/marine_law,
