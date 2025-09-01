@@ -17,6 +17,7 @@
 
 /obj/structure/reagent_dispensers/Initialize(mapload, reagent_amount = 1000)
 	. = ..()
+	ADD_TRAIT(src, TRAIT_REACTS_UNSAFELY, TRAIT_SOURCE_INHERENT)
 	create_reagents(reagent_amount)
 	if(!possible_transfer_amounts)
 		verbs -= /obj/structure/reagent_dispensers/verb/set_APTFT
@@ -130,7 +131,7 @@
 	if(!reagents || reagents.locked)
 		return ..()
 
-	if(mods["alt"])
+	if(mods[ALT_CLICK])
 		dispensing = !dispensing
 		if(dispensing)
 			to_chat(user, SPAN_NOTICE("[src] is now dispensing"))

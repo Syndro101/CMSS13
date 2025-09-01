@@ -49,7 +49,7 @@
 				marine_rk = "soctl"
 			if(JOB_MARINE_RAIDER_CMD)
 				marine_rk = "soccmd"
-			if(JOB_SQUAD_TECH)
+			if(JOB_FORECON_SUPPORT)
 				marine_rk = "tech"
 		if(squad.squad_leader == current_human)
 			switch(squad.squad_type)
@@ -66,6 +66,8 @@
 
 		if(!marine_rk)
 			marine_rk = current_human.rank_fallback
+		if(current_human.rank_override && squad.squad_leader != current_human)
+			marine_rk = current_human.rank_override
 		if(marine_rk)
 			var/image/IMG = image('icons/mob/hud/marine_hud.dmi', current_human, "hudsquad")
 			if(squad_clr)
@@ -105,7 +107,7 @@
 			if(JOB_SO)
 				marine_rk = "so"
 				border_rk = "command"
-			if(JOB_AUXILIARY_OFFICER, JOB_CIA_LIAISON)
+			if(JOB_AUXILIARY_OFFICER)
 				marine_rk = "aso"
 				border_rk = "command"
 			if(JOB_GENERAL, JOB_COLONEL, JOB_ACMC, JOB_CMC)
@@ -115,7 +117,7 @@
 				marine_rk = "med"
 			if(JOB_PLT_SL)
 				marine_rk = "leader"
-			if(JOB_SQUAD_TECH)
+			if(JOB_FORECON_SUPPORT)
 				marine_rk = "tech"
 			if(JOB_INTEL)
 				marine_rk = "io"
@@ -192,6 +194,15 @@
 			if(JOB_PROVOST_MARSHAL, JOB_PROVOST_CMARSHAL, JOB_PROVOST_SMARSHAL)
 				marine_rk = "pvm"
 				border_rk = "command"
+			//CIA
+			if(JOB_CIA_LIAISON)
+				marine_rk = "cialo"
+			if(JOB_CIA_UACQS_ADMN)
+				marine_rk = "uacqs"
+			if(JOB_CIA_UACQS_COMR)
+				marine_rk = "uacqs_com"
+			if(JOB_CIA_UACQS_SEC)
+				marine_rk = "uacqs_sec"
 			// Riot MPs
 			if(JOB_RIOT)
 				marine_rk = "rmp"
@@ -233,6 +244,8 @@
 				marine_rk = "tl"
 			if(JOB_SQUAD_LEADER)
 				marine_rk = "leader"
+		if(current_human.rank_override)
+			marine_rk = current_human.rank_override
 
 		if(marine_rk)
 			var/image/I = image('icons/mob/hud/marine_hud.dmi', current_human, "hudsquad")

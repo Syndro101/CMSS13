@@ -462,6 +462,7 @@
 		/obj/item/ammo_magazine/rifle/m4ra/rubber = 40,
 		/obj/item/clothing/head/helmet/marine/MP = 8,
 		/obj/item/explosive/plastic/breaching_charge/rubber = 6,
+		/obj/item/clothing/glasses/mgoggles/mp_riot_shield = 15,
 	)
 
 /obj/structure/machinery/vending/sea
@@ -484,6 +485,7 @@
 		/obj/item/storage/firstaid/fire = 2,
 		/obj/item/storage/firstaid/rad = 1,
 		/obj/item/device/radio/headset = 6,
+		/obj/item/device/flashlight = 4,
 		/obj/item/tool/crew_monitor = 1,
 	)
 	contraband = list(/obj/item/storage/fancy/cigar = 2,/obj/item/tool/lighter/zippo = 2)
@@ -500,6 +502,13 @@
 	premium = list(/obj/item/reagent_container/glass/bottle/ammonia = 10,/obj/item/reagent_container/glass/bottle/diethylamine = 5)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 
+/obj/structure/machinery/vending/hydronutrients/yautja
+	icon = 'icons/obj/structures/machinery/yautja_machines.dmi'
+	hacking_safety = TRUE
+
+/obj/structure/machinery/vending/hydronutrients/yautja/checking_id()
+	return FALSE
+
 /obj/structure/machinery/vending/hydroseeds
 	name = "\improper MegaSeed Servitor"
 	desc = "When you need seeds fast!"
@@ -513,15 +522,21 @@
 					/obj/item/seeds/sunflowerseed = 2,/obj/item/seeds/tomatoseed = 3,/obj/item/seeds/wheatseed = 3,/obj/item/seeds/appleseed = 3,
 					/obj/item/seeds/poppyseed = 3,/obj/item/seeds/sugarcaneseed = 3,/obj/item/seeds/peanutseed = 3,/obj/item/seeds/whitebeetseed = 3,/obj/item/seeds/watermelonseed = 3,/obj/item/seeds/limeseed = 3,
 					/obj/item/seeds/lemonseed = 3,/obj/item/seeds/orangeseed = 3,/obj/item/seeds/grassseed = 3,/obj/item/seeds/cocoapodseed = 3,/obj/item/seeds/plumpmycelium = 2,
-					/obj/item/seeds/cabbageseed = 3,/obj/item/seeds/grapeseed = 3,/obj/item/seeds/pumpkinseed = 3,/obj/item/seeds/cherryseed = 3,/obj/item/seeds/riceseed = 3)
+					/obj/item/seeds/cabbageseed = 3,/obj/item/seeds/grapeseed = 3,/obj/item/seeds/pumpkinseed = 3,/obj/item/seeds/cherryseed = 3,/obj/item/seeds/riceseed = 3,/obj/item/seeds/reishimycelium = 3,)
 	contraband = list(
 		/obj/item/seeds/libertymycelium = 1,
 		/obj/item/seeds/mtearseed = 1,
 		/obj/item/seeds/ambrosiavulgarisseed = 1,
 		/obj/item/seeds/nettleseed = 1,
-		/obj/item/seeds/reishimycelium = 1,
 	)
 	premium = list(/obj/item/toy/waterflower = 1)
+
+/obj/structure/machinery/vending/hydroseeds/yautja
+	icon = 'icons/obj/structures/machinery/yautja_machines.dmi'
+	hacking_safety = TRUE
+
+/obj/structure/machinery/vending/hydroseeds/yautja/checking_id()
+	return FALSE
 
 /obj/structure/machinery/vending/dinnerware
 	name = "\improper Dinnerware"

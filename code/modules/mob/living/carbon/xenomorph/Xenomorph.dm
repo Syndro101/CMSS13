@@ -60,6 +60,9 @@
 	var/obj/item/clothing/head/head = null
 	var/obj/item/r_store = null
 	var/obj/item/l_store = null
+	// Mob we are hauling
+	var/datum/weakref/hauled_mob
+	var/haul_timer
 
 	var/obj/item/iff_tag/iff_tag = null
 
@@ -154,7 +157,10 @@
 
 	var/pslash_delay = 0
 
-	var/hardcore = 0 //Set to 1 in New() when Whiskey Outpost is active. Prevents healing and queen evolution, deactivates dchat death messages
+	var/hardcore = 0 //Set to 1 in New() when Whiskey Outpost is active. Prevents queen evolution and deactivates dchat death messages
+
+	///Can the xeno rest and passively heal?
+	var/can_heal = TRUE
 
 	//Naming variables
 	var/caste_type = "Drone"
@@ -232,7 +238,6 @@
 	/// Caste-based spit windup
 	var/spit_windup = FALSE
 	/// Caste-based spit windup duration (if applicable)
-	var/spit_delay = 0
 	var/tileoffset = 0 	// How much your view will be offset in the direction that you zoom?
 	var/viewsize = 0	//What size your view will be changed to when you zoom?
 	var/banished = FALSE // Banished xenos can be attacked by all other xenos
@@ -250,8 +255,11 @@
 	var/life_slow_reduction = -1.5
 	//Research organ harvesting.
 	var/organ_removed = FALSE
-	/// value of organ in each caste, e.g. 10k is autodoc larva removal. runner is 500
+	/// value of organ in each caste, e.g. 7k is autodoc larva removal. runner is 500
 	var/organ_value = 0
+
+	var/obj/item/skull/skull = /obj/item/skull
+	var/obj/item/pelt/pelt = /obj/item/pelt
 
 
 	//////////////////////////////////////////////////////////////////
@@ -276,8 +284,6 @@
 	/// 0/FALSE - upright, 1/TRUE - all fours
 	var/agility = FALSE
 	var/ripping_limb = FALSE
-	/// The world.time at which we will regurgitate our currently-vored victim
-	var/devour_timer = 0
 	/// For drones/hivelords. Extends the maximum build range they have
 	var/extra_build_dist = 0
 	/// tiles from self you can plant eggs.
@@ -302,6 +308,13 @@
 	/// the typepath of the placeable we wanna put down
 	var/obj/effect/alien/resin/fruit/selected_fruit = null
 	var/list/built_structures = list()
+
+	// Designer stuff
+	var/obj/effect/alien/resin/design/selected_design = null
+	var/list/available_design = list()
+	var/list/current_design = list()
+	var/max_design_nodes = 0
+	var/selected_design_mark
 
 	var/icon_xeno
 	var/icon_xenonid
@@ -340,7 +353,7 @@
 	//Taken from update_icon for all xeno's
 	var/list/overlays_standing[X_TOTAL_LAYERS]
 
-	var/atom/movable/vis_obj/xeno_wounds/wound_icon_holder
+	var/atom/movable/vis_obj/wound_icon_holder
 	var/atom/movable/vis_obj/xeno_pack/backpack_icon_holder
 	/// If TRUE, the xeno cannot slash anything
 	var/cannot_slash = FALSE
@@ -394,7 +407,8 @@
 		//If we're holding things drop them
 		for(var/obj/item/item in old_xeno.contents) //Drop stuff
 			old_xeno.drop_inv_item_on_ground(item)
-		old_xeno.empty_gut()
+		if(old_xeno.hauled_mob?.resolve())
+			old_xeno.release_haul(old_xeno.hauled_mob.resolve())
 
 		if(old_xeno.iff_tag)
 			iff_tag = old_xeno.iff_tag
@@ -410,7 +424,7 @@
 		caste = GLOB.xeno_datum_list[caste_type]
 
 		//Fire immunity signals
-		if (caste.fire_immunity != FIRE_IMMUNITY_NONE)
+		if (HAS_FLAG(caste.fire_immunity, FIRE_IMMUNITY_NO_DAMAGE | FIRE_IMMUNITY_NO_IGNITE | FIRE_IMMUNITY_XENO_FRENZY))
 			if(caste.fire_immunity & FIRE_IMMUNITY_NO_IGNITE)
 				RegisterSignal(src, COMSIG_LIVING_PREIGNITION, PROC_REF(fire_immune))
 
@@ -470,8 +484,9 @@
 	SStracking.start_tracking("hive_[src.hivenumber]", src)
 
 	//WO GAMEMODE
-	if(SSticker?.mode?.hardcore)
-		hardcore = 1 //Prevents healing and queen evolution
+	if(SSticker?.mode?.hardcore)  //Prevents healing and queen evolution
+		hardcore = TRUE
+		can_heal = FALSE
 	time_of_birth = world.time
 
 	//Minimap
@@ -576,6 +591,7 @@
 
 	//Im putting this in here, because this proc gets called when a player inhabits a SSD xeno and it needs to go somewhere (sorry)
 	hud_set_marks()
+	hud_set_design_marks()
 
 	var/name_prefix = in_hive.prefix
 	var/name_client_prefix = ""
@@ -690,6 +706,10 @@
 /mob/living/carbon/xenomorph/Destroy()
 	GLOB.living_xeno_list -= src
 	GLOB.xeno_mob_list -= src
+	var/mob/living/carbon/human/user = hauled_mob?.resolve()
+	if(user)
+		user.handle_unhaul()
+		hauled_mob = null
 
 	if(tracked_marker)
 		tracked_marker.xenos_tracking -= src
@@ -757,6 +777,8 @@
 /mob/living/carbon/xenomorph/pull_response(mob/puller)
 	if(stat == DEAD)
 		return TRUE
+	if(legcuffed)
+		return TRUE
 	if(has_species(puller,"Human")) // If the Xeno is alive, fight back against a grab/pull
 		var/mob/living/carbon/human/H = puller
 		if(H.ally_of_hivenumber(hivenumber))
@@ -797,6 +819,7 @@
 	hud_set_plasma()
 	hud_set_pheromone()
 	hud_set_marks()
+	hud_set_design_marks()
 
 
 	//and display them

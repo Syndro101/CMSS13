@@ -25,8 +25,7 @@
         "/datum/equipment_preset/survivor/hybrisa/heavy_vehicle_operator",
         "/datum/equipment_preset/survivor/corporate/hybrisa",
         "/datum/equipment_preset/survivor/hybrisa/wey_po",
-        "/datum/equipment_preset/survivor/hybrisa/corporate_goon",
-        "/datum/equipment_preset/survivor/clf"
+        "/datum/equipment_preset/survivor/hybrisa/corporate_goon"
     ],
 	"synth_survivor_types": [
         "/datum/equipment_preset/synth/survivor/hybrisa/engineer_survivor",
@@ -35,6 +34,10 @@
         "/datum/equipment_preset/synth/survivor/hybrisa/civilian",
         "/datum/equipment_preset/synth/survivor/hybrisa/paramedic",
         "/datum/equipment_preset/synth/survivor/hybrisa/exec_bodyguard"
+    ],
+    "CO_insert_survivor_types": [
+        "/datum/equipment_preset/survivor/hybrisa/iasf_commander",
+        "/datum/equipment_preset/survivor/clf/coordinator"
     ],
     "defcon_triggers": [
         3750,

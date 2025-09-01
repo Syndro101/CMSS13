@@ -237,6 +237,7 @@
 
 
 /mob/proc/Life(delta_time)
+	SHOULD_CALL_PARENT(TRUE)
 	SHOULD_NOT_SLEEP(TRUE)
 	if(client == null)
 		away_timer++
@@ -386,7 +387,7 @@
 	if(ishuman(mob))
 		squad = mob.assigned_squad
 	if(!check_improved_pointing()) //Squad Leaders and above have reduced cooldown and get a bigger arrow
-		recently_pointed_to = world.time + 50
+		recently_pointed_to = world.time + 2.5 SECONDS
 		new /obj/effect/overlay/temp/point(T, src, A)
 	else
 		recently_pointed_to = world.time + 10
@@ -441,7 +442,7 @@
 		return TRUE
 
 	if(href_list["flavor_more"])
-		show_browser(usr, "<BODY><TT>[replacetext(flavor_text, "\n", "<BR>")]</TT></BODY>", name, name, "size=500x200")
+		show_browser(usr, "<BODY><TT>[replacetext(flavor_text, "\n", "<BR>")]</TT></BODY>", name, name, width = 500, height = 200)
 		onclose(usr, "[name]")
 		return TRUE
 
@@ -477,6 +478,9 @@
 		return
 
 	if(throwing || is_mob_incapacitated())
+		return
+
+	if(HAS_TRAIT(src, TRAIT_HAULED))
 		return
 
 	if(pulling)
@@ -614,6 +618,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 /mob/proc/dizzy_process()
 	is_dizzy = 1
 	while(dizziness > 100)
+		SEND_SIGNAL(src, COMSIG_MOB_ANIMATING)
 		if(client)
 			if(buckled || resting)
 				client.pixel_x = 0
@@ -654,6 +659,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 /mob/proc/jittery_process()
 	is_jittery = 1
 	while(jitteriness > 100)
+		SEND_SIGNAL(src, COMSIG_MOB_ANIMATING)
 		var/amplitude = min(4, jitteriness / 100)
 		pixel_x = old_x + rand(-amplitude, amplitude)
 		pixel_y = old_y + rand(-amplitude/3, amplitude/3)
@@ -802,7 +808,7 @@ note dizziness decrements automatically in the mob's Life() proc.
 			return FALSE
 		to_chat(usr, SPAN_WARNING("You attempt to get a good grip on [selection] in [src]'s body."))
 
-	if(!do_after(usr, 80 * usr.get_skill_duration_multiplier(SKILL_SURGERY), INTERRUPT_ALL, BUSY_ICON_FRIENDLY))
+	if(!do_after(usr, 2 SECONDS * selection.w_class * usr.get_skill_duration_multiplier(SKILL_SURGERY), INTERRUPT_ALL, BUSY_ICON_FRIENDLY))
 		return
 	if(!selection || !src || !usr || !istype(selection))
 		return
@@ -840,7 +846,8 @@ note dizziness decrements automatically in the mob's Life() proc.
 			affected.wounds += I
 			H.custom_pain("Something tears wetly in your [affected] as [selection] is pulled free!", 1)
 
-	selection.forceMove(get_turf(src))
+	playsound(loc, 'sound/weapons/bladeslice.ogg', 25)
+	usr.put_in_hands(selection)
 	return TRUE
 
 ///Can this mob resist (default FALSE)
@@ -1063,3 +1070,14 @@ note dizziness decrements automatically in the mob's Life() proc.
 	mind.transfer_to(new_player)
 
 	qdel(src)
+
+/mob/proc/update_cursor()
+
+	client?.mouse_pointer_icon = client?.prefs.chosen_pointer
+
+/// To be used when displaying a mobs "username" to players
+/mob/proc/username()
+	if(client)
+		return client.username()
+
+	return key

@@ -415,7 +415,7 @@
 
 	..()
 
-/mob/living/launch_towards(datum/launch_metadata/LM)
+/mob/living/launch_towards(datum/launch_metadata/LM, tracking = FALSE)
 	if(src)
 		SEND_SIGNAL(src, COMSIG_MOB_MOVE_OR_LOOK, TRUE, dir, dir)
 	if(!istype(LM) || !LM.target || !src)
@@ -465,12 +465,12 @@
 /mob/proc/flash_eyes()
 	return
 
-/mob/living/flash_eyes(intensity = EYE_PROTECTION_FLASH, bypass_checks, flash_timer = 40, type = /atom/movable/screen/fullscreen/flash, dark_type = /atom/movable/screen/fullscreen/flash/dark)
+/mob/living/flash_eyes(intensity = EYE_PROTECTION_FLASH, bypass_checks, flash_timer = 40, light_type = /atom/movable/screen/fullscreen/flash, dark_type = /atom/movable/screen/fullscreen/flash/dark)
 	if(bypass_checks || (get_eye_protection() < intensity && !(sdisabilities & DISABILITY_BLIND)))
 		if(client?.prefs?.flash_overlay_pref == FLASH_OVERLAY_DARK)
 			overlay_fullscreen("flash", dark_type)
 		else
-			overlay_fullscreen("flash", type)
+			overlay_fullscreen("flash", light_type)
 		spawn(flash_timer)
 			clear_fullscreen("flash", 20)
 		return TRUE
@@ -692,13 +692,16 @@
 
 
 // legacy procs
-/mob/living/put_in_l_hand(obj/item/W)
+/mob/living/put_in_l_hand(obj/item/moved_item)
 	if(body_position == LYING_DOWN)
-		return
+		if(!HAS_TRAIT(src, TRAIT_HAULED))
+			return
 	return ..()
-/mob/living/put_in_r_hand(obj/item/W)
+
+/mob/living/put_in_r_hand(obj/item/moved_item)
 	if(body_position == LYING_DOWN)
-		return
+		if(!HAS_TRAIT(src, TRAIT_HAULED))
+			return
 	return ..()
 
 /mob/living/onZImpact(turf/impact_turf, height)

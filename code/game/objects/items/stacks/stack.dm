@@ -93,7 +93,7 @@ Also change the icon to reflect the amount of sheets, if possible.*/
 		var/datum/stack_recipe_list/srl = recipe_list[recipes_sublist]
 		recipe_list = srl.recipes
 	var/t1 = text("<HTML><HEAD><title>Constructions from []</title></HEAD><body><TT>Amount Left: []<br>", src, src.amount)
-	for(var/i = 1; i <= length(recipe_list), i++)
+	for(var/i = 1; i <= length(recipe_list); i++)
 		var/E = recipe_list[i]
 		if(isnull(E))
 			t1 += "<hr>"
@@ -136,7 +136,7 @@ Also change the icon to reflect the amount of sheets, if possible.*/
 					t1 += " <A href='byond://?src=\ref[src];make=[i];multiplier=[max_multiplier]'>[max_multiplier*R.res_amount]x</A>"
 
 	t1 += "</TT></body></HTML>"
-	show_browser(user, t1, "Construction using [src]", "stack")
+	show_browser(user, t1, "Construction using [src]", "stack", width = 440, height = 500)
 	return
 
 /obj/item/stack/Topic(href, href_list)
@@ -331,7 +331,7 @@ Also change the icon to reflect the amount of sheets, if possible.*/
 			break
 
 /obj/item/stack/clicked(mob/user, list/mods)
-	if(mods["alt"])
+	if(mods[ALT_CLICK])
 		if(!CAN_PICKUP(user, src))
 			return
 		if(amount <= 1)

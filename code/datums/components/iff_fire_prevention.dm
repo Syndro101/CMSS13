@@ -29,7 +29,11 @@
 
 	var/range_to_check = user.get_maximum_view_range()
 
-	var/extended_target_turf = get_angle_target_turf(user, angle, range_to_check)
+	var/extended_target_turf
+	if(target.z > user.z)
+		extended_target_turf = get_angle_target_turf(locate(user.x, user.y, target.z), angle, range_to_check)
+	else
+		extended_target_turf = get_angle_target_turf(user, angle, range_to_check)
 
 	var/turf/starting_turf = get_turf(user)
 
@@ -78,6 +82,8 @@
 			if(checked_living == user) // sometimes it still happens
 				continue
 			if(checked_living.body_position == LYING_DOWN && projectile_to_fire.original != checked_living)
+				continue
+			if(HAS_TRAIT(checked_living, TRAIT_NESTED))
 				continue
 
 			if(checked_living.get_target_lock(user.faction_group))

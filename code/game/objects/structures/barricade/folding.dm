@@ -176,6 +176,9 @@
 				if(!area.allow_construction)
 					to_chat(user, SPAN_WARNING("[src] must be secured on a proper surface!"))
 					return
+				if(area.flags_area & AREA_NOSECURECADES)
+					to_chat(user, SPAN_WARNING("[src] must be secured on a proper surface!"))
+					return
 				var/turf/open/T = loc
 				if(!(istype(T) && T.allow_construction))
 					to_chat(user, SPAN_WARNING("[src] must be secured on a proper surface!"))
@@ -219,8 +222,8 @@
 		if(recentlyflipped)
 			to_chat(user, SPAN_NOTICE("[src] has been flipped too recently!"))
 			return
-		user.visible_message(SPAN_NOTICE("[user] flips [src] open."),
-		SPAN_NOTICE("You flip [src] open."))
+		user.visible_message(SPAN_NOTICE("[user] flips [src] closed."),
+		SPAN_NOTICE("You flip [src] closed."))
 		open(src)
 		recentlyflipped = TRUE
 		spawn(10)
@@ -231,8 +234,8 @@
 		if(recentlyflipped)
 			to_chat(user, SPAN_NOTICE("[src] has been flipped too recently!"))
 			return
-		user.visible_message(SPAN_NOTICE("[user] flips [src] closed."),
-		SPAN_NOTICE("You flip [src] closed."))
+		user.visible_message(SPAN_NOTICE("[user] flips [src] open."),
+		SPAN_NOTICE("You flip [src] open."))
 		close(src)
 		recentlyflipped = TRUE
 		spawn(10)

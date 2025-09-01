@@ -6,7 +6,7 @@
 
 	actions_to_remove = list(
 		/datum/action/xeno_action/activable/tail_stab,
-		/datum/action/xeno_action/activable/xeno_spit,
+		/datum/action/xeno_action/activable/xeno_spit/praetorian,
 		/datum/action/xeno_action/activable/pounce/base_prae_dash,
 		/datum/action/xeno_action/activable/prae_acid_ball,
 		/datum/action/xeno_action/activable/spray_acid/base_prae_spray_acid,
@@ -135,6 +135,10 @@
 
 	if (HAS_TRAIT(buffing_target, TRAIT_VALKYRIE_ARMORED))
 		to_chat(raging_valkyrie, SPAN_XENOWARNING("[buffing_target] is already enraged!"))
+		return
+
+	if(get_dist(raging_valkyrie, buffing_target) > max_range) // an edge case where you watch somebody from hive status, and move while observing somebody so the buff applies since theres no actual range check.
+		to_chat(raging_valkyrie, SPAN_XENOWARNING("We need to be closer."))
 		return
 
 	if (!action_cooldown_check())

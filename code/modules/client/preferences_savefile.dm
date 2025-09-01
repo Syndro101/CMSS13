@@ -1,5 +1,5 @@
 #define SAVEFILE_VERSION_MIN 8
-#define SAVEFILE_VERSION_MAX 31
+#define SAVEFILE_VERSION_MAX 32
 
 //handles converting savefiles to new formats
 //MAKE SURE YOU KEEP THIS UP TO DATE!
@@ -217,6 +217,12 @@
 
 		S.cd = "/"
 
+	if(savefile_version < 32)
+		var/pref_toggles
+		S["toggle_prefs"] >> pref_toggles
+		pref_toggles |= TOGGLE_LEADERSHIP_SPOKEN_ORDERS // Enables it by default for new saves
+		S["toggle_prefs"] << pref_toggles
+
 	savefile_version = SAVEFILE_VERSION_MAX
 	return 1
 
@@ -280,6 +286,7 @@
 	S["dual_wield_pref"] >> dual_wield_pref
 	S["toggles_flashing"] >> toggles_flashing
 	S["toggles_ert"] >> toggles_ert
+	S["toggles_survivor"] >> toggles_survivor
 	S["toggles_ert_pred"] >> toggles_ert_pred
 	S["toggles_admin"] >> toggles_admin
 	S["UI_style"] >> UI_style
@@ -318,6 +325,7 @@
 	S["pred_age"] >> predator_age
 	S["pred_use_legacy"] >> predator_use_legacy
 	S["pred_trans_type"] >> predator_translator_type
+	S["pred_invis_sound"] >> predator_invisibility_sound
 	S["pred_mask_type"] >> predator_mask_type
 	S["pred_accessory_type"] >> predator_accessory_type
 	S["pred_armor_type"] >> predator_armor_type
@@ -361,6 +369,10 @@
 	S["tooltips"] >> tooltips
 	S["key_bindings"] >> key_bindings
 
+	S["tgui_lock"] >> tgui_lock
+	S["tgui_fancy"] >> tgui_fancy
+	S["window_scale"] >> window_scale
+
 	var/tutorial_string = ""
 	S["completed_tutorials"] >> tutorial_string
 	tutorial_savestring_to_list(tutorial_string)
@@ -372,6 +384,8 @@
 
 	S["job_loadout"] >> loadout
 	S["job_loadout_names"] >> loadout_slot_names
+
+	S["show_cooldown_messages"] >> show_cooldown_messages
 
 	//Sanitize
 	ooccolor = sanitize_hexcolor(ooccolor, CONFIG_GET(string/ooc_color_default))
@@ -390,6 +404,7 @@
 	dual_wield_pref = sanitize_integer(dual_wield_pref, 0, 2, initial(dual_wield_pref))
 	toggles_flashing= sanitize_integer(toggles_flashing, 0, SHORT_REAL_LIMIT, initial(toggles_flashing))
 	toggles_ert = sanitize_integer(toggles_ert, 0, SHORT_REAL_LIMIT, initial(toggles_ert))
+	toggles_survivor = sanitize_integer(toggles_survivor, 0, SHORT_REAL_LIMIT, initial(toggles_survivor))
 	toggles_ert_pred = sanitize_integer(toggles_ert_pred, 0, SHORT_REAL_LIMIT, initial(toggles_ert_pred))
 	toggles_admin = sanitize_integer(toggles_admin, 0, SHORT_REAL_LIMIT, initial(toggles_admin))
 	UI_style_color = sanitize_hexcolor(UI_style_color, initial(UI_style_color))
@@ -421,6 +436,7 @@
 	predator_age = sanitize_integer(predator_age, 100, 10000, initial(predator_age))
 	predator_use_legacy = sanitize_inlist(predator_use_legacy, PRED_LEGACIES, initial(predator_use_legacy))
 	predator_translator_type = sanitize_inlist(predator_translator_type, PRED_TRANSLATORS, initial(predator_translator_type))
+	predator_invisibility_sound = sanitize_inlist(predator_invisibility_sound, PRED_INVIS_SOUNDS, initial(predator_invisibility_sound))
 	predator_mask_type = sanitize_integer(predator_mask_type,1,1000000,initial(predator_mask_type))
 	predator_accessory_type = sanitize_integer(predator_accessory_type,0,3, initial(predator_accessory_type))
 	predator_armor_type = sanitize_integer(predator_armor_type,1,1000000,initial(predator_armor_type))
@@ -440,6 +456,10 @@
 	yautja_status = sanitize_inlist(yautja_status, GLOB.whitelist_hierarchy + list("Elder"), initial(yautja_status))
 	synth_status = sanitize_inlist(synth_status, GLOB.whitelist_hierarchy, initial(synth_status))
 
+	window_scale = sanitize_integer(window_scale, FALSE, TRUE, initial(window_scale))
+	tgui_lock = sanitize_integer(tgui_lock, FALSE, TRUE, initial(tgui_lock))
+	tgui_fancy = sanitize_integer(tgui_fancy, FALSE, TRUE, initial(tgui_fancy))
+
 	fax_name_uscm = fax_name_uscm ? sanitize_text(fax_name_uscm, initial(fax_name_uscm)) : generate_name(FACTION_MARINE)
 	fax_name_pvst = fax_name_pvst ? sanitize_text(fax_name_pvst, initial(fax_name_pvst)) : generate_name(FACTION_MARINE)
 	fax_name_wy = fax_name_wy ? sanitize_text(fax_name_wy, initial(fax_name_wy)) : generate_name(FACTION_WY)
@@ -458,6 +478,8 @@
 
 	loadout = sanitize_loadout(loadout, owner)
 	loadout_slot_names = sanitize_islist(loadout_slot_names, list())
+
+	show_cooldown_messages = sanitize_integer(show_cooldown_messages, FALSE, TRUE, FALSE)
 
 	check_keybindings()
 	S["key_bindings"] << key_bindings
@@ -526,6 +548,7 @@
 	S["dual_wield_pref"] << dual_wield_pref
 	S["toggles_flashing"] << toggles_flashing
 	S["toggles_ert"] << toggles_ert
+	S["toggles_survivor"] << toggles_survivor
 	S["toggles_ert_pred"] << toggles_ert_pred
 	S["toggles_admin"] << toggles_admin
 	S["window_skin"] << window_skin
@@ -555,6 +578,7 @@
 	S["pred_age"] << predator_age
 	S["pred_use_legacy"] << predator_use_legacy
 	S["pred_trans_type"] << predator_translator_type
+	S["pred_invis_sound"] << predator_invisibility_sound
 	S["pred_mask_type"] << predator_mask_type
 	S["pred_accessory_type"] << predator_accessory_type
 	S["pred_armor_type"] << predator_armor_type
@@ -605,6 +629,12 @@
 
 	S["job_loadout"] << save_loadout(loadout)
 	S["job_loadout_names"] << loadout_slot_names
+
+	S["tgui_fancy"] << tgui_fancy
+	S["tgui_lock"] << tgui_lock
+	S["window_scale"] << window_scale
+
+	S["show_cooldown_messages"] << show_cooldown_messages
 
 	return TRUE
 
@@ -662,7 +692,7 @@
 	S["underwear"] >> underwear
 	S["undershirt"] >> undershirt
 	S["backbag"] >> backbag
-	//S["b_type"] >> b_type
+	//S["blood_type"] >> blood_type
 
 	//Jobs
 	S["alternate_option"] >> alternate_option
@@ -691,6 +721,7 @@
 	S["traits"] >> traits
 
 	S["preferred_squad"] >> preferred_squad
+	S["preferred_spec"] >> preferred_spec
 	S["preferred_armor"] >> preferred_armor
 	S["night_vision_preference"] >> night_vision_preference
 	S["weyland_yutani_relation"] >> weyland_yutani_relation
@@ -750,7 +781,7 @@
 	backbag = sanitize_integer(backbag, 1, length(GLOB.backbaglist), initial(backbag))
 	preferred_armor = sanitize_inlist(preferred_armor, GLOB.armor_style_list, "Random")
 	night_vision_preference = sanitize_inlist(night_vision_preference, GLOB.nvg_color_list, "Green")
-	//b_type = sanitize_text(b_type, initial(b_type))
+	//blood_type = sanitize_text(blood_type, initial(blood_type))
 
 	alternate_option = sanitize_integer(alternate_option, 0, 3, initial(alternate_option))
 	if(!job_preference_list)
@@ -777,6 +808,7 @@
 		religion = RELIGION_AGNOSTICISM
 	if(!preferred_squad)
 		preferred_squad = "None"
+	preferred_spec = sanitize_list(preferred_spec, allow=GLOB.specialist_set_name_dict)
 
 	return 1
 
@@ -822,7 +854,7 @@
 	S["underwear"] << underwear
 	S["undershirt"] << undershirt
 	S["backbag"] << backbag
-	//S["b_type"] << b_type
+	//S["blood_type"] << blood_type
 	S["spawnpoint"] << spawnpoint
 
 	//Jobs
@@ -854,6 +886,7 @@
 
 	S["weyland_yutani_relation"] << weyland_yutani_relation
 	S["preferred_squad"] << preferred_squad
+	S["preferred_spec"] << preferred_spec
 	S["preferred_armor"] << preferred_armor
 	S["night_vision_preference"] << night_vision_preference
 	//S["skin_style"] << skin_style
