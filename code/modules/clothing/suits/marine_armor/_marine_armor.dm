@@ -366,6 +366,13 @@
 	item_state_slots = list(WEAR_JACKET = "officer")
 	black_market_value = 20
 
+/obj/item/clothing/suit/storage/marine/CIC/padless
+	name = "\improper M3 pattern padless officer armor"
+	desc = "A well-crafted suit of M3 Pattern Armor typically found in the hands of higher-ranking officers. Useful for letting your men know who is in charge when taking to the field, this one is missing its shoulder pads."
+	icon_state = "officer_padless"
+	item_state_slots = list(WEAR_JACKET = "officer_padless")
+	specialty = "M3 pattern padless officer"
+
 //Making a new object because we might want to edit armor values and such.
 //Or give it its own sprite. It's more for the future.
 /obj/item/clothing/suit/storage/marine/CIC/CO
